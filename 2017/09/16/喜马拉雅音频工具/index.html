@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript,php,喜马拉雅,kymd," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CKylinMyBlog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小">
+<meta name="keywords" content="javascript,php,喜马拉雅,kymd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="喜马拉雅音频获取小工具">
+<meta property="og:url" content="http://www.ckylin-mc.cn/2017/09/16/喜马拉雅音频工具/index.html">
+<meta property="og:site_name" content="CKylinMyBlog">
+<meta property="og:description" content="学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-16T11:24:05.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="喜马拉雅音频获取小工具">
+<meta name="twitter:description" content="学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.ckylin-mc.cn/2017/09/16/喜马拉雅音频工具/"/>
+
+
+
+
+
+  <title>喜马拉雅音频获取小工具 | CKylinMyBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CKylinMyBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">愿代码没有BUG</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.ckylin-mc.cn/2017/09/16/喜马拉雅音频工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CKylinMC">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/11648014?v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CKylinMyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">喜马拉雅音频获取小工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T19:07:00+08:00">
+                2017-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程开发/" itemprop="url" rel="index">
+                    <span itemprop="name">编程开发</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程开发/小作品/" itemprop="url" rel="index">
+                    <span itemprop="name">小作品</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小程序来做到直接下载。（音频ID同样出现在每个音频页面的URL中。）<br><a id="more"></a></p>
+<h2 id="Javascript版-失败"><a href="#Javascript版-失败" class="headerlink" title="Javascript版 - 失败"></a>Javascript版 - 失败</h2><p>由于我目前掌握的相对好一点的就是JS和PHP，为了后面能够方便设计界面我优先选择的是JS。网页方面用的就是我之前自己写的<a href="https://github.com/Cansll/KyMD" target="_blank" rel="external">KyMD</a>作为样式，虽然简陋但是够用。网页很简单，就加了一个输入框，一个按钮还有一个文本域用于存放结果。</p>
+<p>为了能够确认输入的是我需要的音频页面链接，我首先对传入的URL进行判断。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkIsTrackUrl</span>(<span class="params">url</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(!url) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">    a.href = url;</div><div class="line">    <span class="keyword">if</span>(!a.hostname==<span class="string">"www.ximalaya.com"</span>) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">if</span>(a.pathname.indexOf(<span class="string">"/sound/"</span>)===<span class="number">-1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> start = a.pathname.indexOf(<span class="string">"/sound/"</span>)+<span class="number">7</span>;</div><div class="line">    <span class="keyword">var</span> track = a.pathname.slice(start).replace(<span class="regexp">/\//</span>,<span class="string">""</span>);</div><div class="line">    <span class="keyword">return</span> track;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果为空直接返回false。<br>喜马拉雅音频页面的链接结构大概是 <code>http://www.ximalaya.com/XXXXXXXX/sound/XXXXXXXX/</code><br>最后那一串XXXXXXXX便是我需要的音频ID。<br>然后创建一个a元素，把url穿进去，这样就可以直接获取到url的各部分结构了。先查域名是不是喜马拉雅的域名，如果不是返回false，然后判断路径中是否存在 <code>/sound/</code> 这段字符，如果出现则代表是喜马拉雅音频的链接，否则其他的专辑页面啊什么的全都返回false。<br>最后，取出 <code>/sound</code> 后面的字符。我先获取到 <code>/sound/</code> 的字符位置，然后+7跳过 <code>/sound/</code>，这样就能获取到最后的几位数字了。为了确保链接最后不会多出一个路径符号，我这里再次的替换一次，确保取出来的只是音频ID不是其他的什么东西。</p>
+<p>之后就可以进入另一个函数了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTrackDownUrl</span>(<span class="params">url</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> track = checkIsTrackUrl(url);</div><div class="line">    <span class="keyword">if</span>(track===<span class="literal">false</span>)&#123;</div><div class="line">        dialog.setTitle(<span class="string">"Track 地址无效"</span>).setContent(<span class="string">"请输入正确的Track地址! (地址格式验证不通过，请确保地址全部小写且合法)"</span>).show();</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.debug(<span class="string">"Track ID Get: "</span>+track);</div><div class="line">    <span class="keyword">var</span> apiPath = <span class="string">"http://www.ximalaya.com/tracks/"</span>+track+<span class="string">".json"</span>;</div><div class="line">    $.getJSON(apiPath,<span class="function"><span class="keyword">function</span> (<span class="params">r,s</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(s!==<span class="number">200</span>)&#123;</div><div class="line">            dialog.setTitle(<span class="string">"获取信息时出现错误"</span>).setContent(<span class="string">"获取信息时出现错误： HTTP "</span>+s+<span class="string">" ERROR"</span>).show();</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> id = r.id,</div><div class="line">            download = r.play_path_64,</div><div class="line">            duration = r.duration,</div><div class="line">            title = r.title,</div><div class="line">            user = r.nickname,</div><div class="line">            album = r.album_title,</div><div class="line">            info = r.intro,</div><div class="line">            time = r.time_until_now;</div><div class="line">        <span class="keyword">var</span> audiolength = duration / <span class="number">60</span>;</div><div class="line">        dialog.setTitle(<span class="string">"来自"</span>+user+<span class="string">"的音频"</span>).setContent(</div><div class="line">            <span class="string">"&lt;b&gt;音频:&lt;/b&gt; "</span>+title +<span class="string">"&lt;br&gt;"</span>+</div><div class="line">            <span class="string">"&lt;b&gt;长度:&lt;/b&gt; "</span>+audiolength+<span class="string">"&lt;br&gt;"</span>+</div><div class="line">            <span class="string">"&lt;b&gt;专辑:&lt;/b&gt; "</span>+album+<span class="string">"&lt;br&gt;"</span>+</div><div class="line">            <span class="string">"&lt;b&gt;上传时间:&lt;/b&gt; "</span>+time+<span class="string">"&lt;br&gt;"</span>+</div><div class="line">            <span class="string">"&lt;b&gt;介绍:&lt;/b&gt; "</span>+info+<span class="string">"&lt;br&gt;"</span>+</div><div class="line">            <span class="string">"&lt;b&gt;下载地址:&lt;/b&gt; "</span>+download+<span class="string">"&lt;br&gt;"</span></div><div class="line">        ).show();</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).value = download;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>先判断 <code>checkIsTrackUrl</code> 函数的返回，若是false则url没通过检查，直接弹出错误然后返回。这里 <code>dialog</code> 是我二次封装的一个 <code>dialog-polyfill</code> 对话框。这些代码都在我的 <code>KyMD</code> 中。<br>之后拼接api地址，使用jquery的获取json方式获得结果。</p>
+<h2 id="PHP版-成功"><a href="#PHP版-成功" class="headerlink" title="PHP版 成功"></a>PHP版 成功</h2><p>如上方法在实际测试时，发现出现了跨站的问题，所以就只能舍弃用户界面，换成php语言重写成命令行程序。<br>我直接使用了Minecraft游戏服务器的 PHP7 运行环境，无需配置就可以使用。<br>由于是命令行程序，所以我先写了3个用于命令行输入输出的函数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span><span class="params">($out)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    $out = t($out);</div><div class="line">    fwrite(STDOUT, <span class="string">"\n$out"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">raw_output</span><span class="params">($out)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">// $out = t($out);</span></div><div class="line">    fwrite(STDOUT, <span class="string">"\n$out"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ask</span><span class="params">($out)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    output($out);</div><div class="line">    <span class="keyword">return</span> trim(fgets(STDIN));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">t</span><span class="params">($t)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">return</span> iconv(<span class="string">"UTF-8"</span>,<span class="string">"GBK"</span>,$t);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>由于我的目标是windows系统，所以这里所有的中文字符均需要转码。output函数会在每一次输出前转码，但是如果我需要输出已经转好的文字，则不能使用output，于是我单独写了一个raw_output用于直接输出。ask函数很简单，就是先输出一段字，然后等待输入。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">    output(<span class="string">"\n\n&gt;[ 新的下载任务 ]----------------------\n"</span>);</div><div class="line">    $res = ask(<span class="string">"[?] 输入一个音频链接: "</span>);</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">empty</span>($res)) &#123;</div><div class="line">        output(<span class="string">"[!] 请输入一个链接！!"</span>);</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ($res == <span class="string">"exit"</span>) &#123;</div><div class="line">        output(<span class="string">"\n[!] 退出."</span>);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    ......</div></pre></td></tr></table></figure></p>
+<p>我把所有主程序代码放在了一个循环里，这样可以在执行完一次下载后立刻准备好下一次下载。<br>我首先输出“请输入一个音频链接”，提示输入一个完整音频链接，然后判断用户输入是否为空，空则直接提示“输入一个链接”然后继续循环，开始下一次接受输入。如果用户输入的是 <code>exit</code> ，则直接跳出循环。循环外没有单独的代码，所以跳出循环意味着结束程序。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line">$urlinfos = parse_url($res);</div><div class="line">$track = getTrack($urlinfos);</div><div class="line"><span class="keyword">if</span> ($track === <span class="keyword">false</span>) <span class="keyword">continue</span>;</div><div class="line">$track = str_replace(<span class="string">"/"</span>, <span class="string">""</span>, $track);</div><div class="line">output(<span class="string">"\n[+] Track ID: $track \n[*] 正在获取信息..."</span>);</div><div class="line">......</div></pre></td></tr></table></figure></p>
+<p>这里调用了一下 <code>parse_url</code> 代替js中的创建a标间方式来解析URL。解析的结果交给函数处理，和js版本一样，如果解析成功返回音频ID，否则返回false：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTrack</span><span class="params">($info)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">empty</span>($info)) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">if</span> ($info[<span class="string">"host"</span>] != <span class="string">"www.ximalaya.com"</span>) &#123;</div><div class="line">        output(<span class="string">"[!] 请输入完整链接!"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    $sound = stristr($info[<span class="string">"path"</span>], <span class="string">"/sound/"</span>);</div><div class="line">    <span class="keyword">if</span> ($sound === <span class="keyword">false</span>) &#123;</div><div class="line">        output(<span class="string">"[!] 请确保输入的是音频页面的链接!"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    $sound = str_replace(<span class="string">"/"</span>, <span class="string">""</span>, str_replace(<span class="string">"/sound/"</span>, <span class="string">""</span>, $sound));</div><div class="line">    <span class="keyword">return</span> $sound;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在处理音频ID时同样是多替换一次路径符号。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    ......</div><div class="line">    $api = <span class="string">"http://www.ximalaya.com/tracks/$track.json"</span>;</div><div class="line"><span class="comment">//    $httpinfo;</span></div><div class="line"><span class="comment">//    $res = http_get($api, $httpinfo);</span></div><div class="line"><span class="comment">//    if ($httpinfo['response_code'] != "200") &#123;</span></div><div class="line"><span class="comment">//        output("HTTP " . $httpinfo['response_code'] . " ERROR. JSON data get failed.");</span></div><div class="line"><span class="comment">//        continue;</span></div><div class="line"><span class="comment">//    &#125;</span></div><div class="line">    ......</div></pre></td></tr></table></figure></p>
+<p>拼接api。本想使用http_get函数直接完成获取操作，但是发现http_get要求额外的php扩展，而这个扩展恰好我没有装…<br>由于CURL还不是很熟，以前都是很简单的文件获取直接用 <code>file_get_content</code> 了，所以这次就直接找了一个cUrl的封装函数，修改到适合直接用了…</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cUrl</span><span class="params">($url, $header = null, $data = null)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">//初始化curl</span></div><div class="line">    $curl = curl_init();</div><div class="line">    <span class="comment">//设置cURL传输选项</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> (is_array($header)) &#123;</div><div class="line"></div><div class="line">        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</div><div class="line">    curl_setopt($curl, CURLOPT_URL, $url);</div><div class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, <span class="keyword">FALSE</span>);</div><div class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, <span class="keyword">FALSE</span>);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!<span class="keyword">empty</span>($data)) &#123;<span class="comment">//post方式</span></div><div class="line">        curl_setopt($curl, CURLOPT_POST, <span class="number">1</span>);</div><div class="line">        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//获取采集结果</span></div><div class="line">    $output = curl_exec($curl);</div><div class="line"></div><div class="line">    <span class="comment">//关闭cURL链接</span></div><div class="line">    curl_close($curl);</div><div class="line"></div><div class="line">    <span class="comment">//解析json</span></div><div class="line">    $json = json_decode($output, <span class="keyword">true</span>);</div><div class="line">    <span class="comment">//判断json还是xml</span></div><div class="line">    <span class="keyword">if</span> ($json) &#123;</div><div class="line">        <span class="keyword">return</span> $json;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">#验证xml</span></div><div class="line">        libxml_disable_entity_loader(<span class="keyword">true</span>);</div><div class="line">        <span class="comment">#解析xml</span></div><div class="line">        $xml = simplexml_load_string($output, <span class="string">'SimpleXMLElement'</span>, LIBXML_NOCDATA);</div><div class="line">        <span class="keyword">return</span> $xml;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后直接调用。。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    ......</div><div class="line">    $r = cUrl($api);</div><div class="line"><span class="comment">//    $r = json_decode($res);</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">empty</span>($r)) &#123;</div><div class="line">        output(<span class="string">"[!] 解析数据时出错."</span>);</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">    &#125;</div><div class="line">    ......</div></pre></td></tr></table></figure>
+<p>先判断json的解析结果。如果是空的，则解析出错。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">    ......</div><div class="line"><span class="keyword">if</span> (!<span class="keyword">isset</span>($r[<span class="string">'res'</span>])) &#123;</div><div class="line">        output(<span class="string">"[+] 已经定位音频:\n\n"</span>);</div><div class="line">        $down = $r[<span class="string">'play_path'</span>];</div><div class="line">        $duration = $r[<span class="string">'duration'</span>] / <span class="number">60</span>;</div><div class="line">        $title = t($r[<span class="string">'title'</span>]);</div><div class="line">        $user = t($r[<span class="string">'nickname'</span>]);</div><div class="line">        $realtime = t($r[<span class="string">'formatted_created_at'</span>]);</div><div class="line">        $time = t($r[<span class="string">'time_until_now'</span>]);</div><div class="line">        $album = t($r[<span class="string">'album_title'</span>]);</div><div class="line">        $intro = t($r[<span class="string">'intro'</span>]);</div><div class="line">        raw_output(t(<span class="string">"上传用户:"</span>).<span class="string">" $user \n"</span>.t(<span class="string">"音频长度: "</span>).<span class="string">"$duration min \n"</span>.t(<span class="string">"音频题目: "</span>).<span class="string">"$title \n"</span>.t(<span class="string">"所在专辑:"</span>).<span class="string">" $album \n"</span>.t(<span class="string">"上传时间: "</span>).<span class="string">"$time / $realtime \n"</span>.t(<span class="string">"音频描述:"</span>).<span class="string">" $intro \n"</span>.t(<span class="string">"音频链接:"</span>).<span class="string">" $down"</span>);</div><div class="line">    ......</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        output(<span class="string">"[!] 数据查询出错，检查输入的链接. ($res)"</span>);</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">    &#125;</div><div class="line">    ......</div></pre></td></tr></table></figure>
+<p>这里是获取音频信息并打印在屏幕上。我从官方API中摘出大概对下载音频时标注和区分每个人音频的大概就是这些了。检查res是否存在是为了如果音频不存在，那么依然会返回json但是不存在res键值。这种情况一般意味着输入的链接有问题。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    ......</div><div class="line">        $ran = rand(<span class="number">00001</span>, <span class="number">99999</span>);</div><div class="line"><span class="comment">//        $filename = str_replace(" ","","$user-$title-$time-$ran.m4a");</span></div><div class="line">        $filename = <span class="string">"$user-$title-$album-$time-$ran.m4a"</span>;</div><div class="line">        raw_output(t(<span class="string">"\n\n[*] 准备下载..."</span>).<span class="string">"($filename)"</span>);</div><div class="line">        $path = dirname(<span class="keyword">__FILE__</span>) . <span class="string">"\\audios\\"</span>;</div><div class="line">        $filepath = $path . $filename;</div><div class="line">        @mkdir($path);</div><div class="line">        raw_output(t(<span class="string">"[+] 输出目录: "</span>).<span class="string">"$path"</span>);</div><div class="line">    ......</div></pre></td></tr></table></figure>
+<p>这一部分时我拼接输出文件路径的地方。直接输出在php文件的audios子目录下。文件名格式就是”用户名-音频标题-音频专辑-时间-随机数.m4a”。我习惯在输出文件时在文件名后加随机数避免重复。这个时间我用的是官方API中的”time_until_now”。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line">    $target = fopen($down, <span class="string">"rb"</span>);</div><div class="line">    $newfile = <span class="string">''</span>;</div><div class="line">    <span class="keyword">if</span> ($target) &#123;</div><div class="line">        $newfile = fopen($filepath, <span class="string">"wb"</span>);</div><div class="line">        <span class="keyword">if</span> ($newfile) &#123;</div><div class="line">            output(<span class="string">"[*] 正在下载..."</span>);</div><div class="line">            <span class="keyword">while</span> (!feof($target)) &#123;</div><div class="line">                fwrite($newfile, fread($target, <span class="number">1024</span> * <span class="number">8</span>), <span class="number">1024</span> * <span class="number">8</span>);</div><div class="line">            &#125;</div><div class="line">            output(<span class="string">"[*] 文件传输完成，正在进行最后的操作..."</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">//fclose($newfile);</span></div><div class="line">            raw_output(t(<span class="string">"[!] 文件写入时出错，无法打开本地文件，请检查权限."</span>).<span class="string">"($filepath)"</span>);</div><div class="line">            fclose($target);</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//fclose($target);</span></div><div class="line">        output(<span class="string">"[!] 远程文件查找出错，无法下载，请检查网络.($down)"</span>);</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ($target) fclose($target);</div><div class="line">    <span class="keyword">if</span> ($newfile) fclose($newfile);</div><div class="line">    raw_output(t(<span class="string">"\n\n[+] 文件已经成功下载到 "</span>).<span class="string">"$filepath"</span>);</div><div class="line">    output(<span class="string">"文件大小: "</span>.getSizeT($filepath).<span class="string">"\n"</span>);</div><div class="line">    <span class="keyword">continue</span>;</div><div class="line">......</div></pre></td></tr></table></figure>
+<p>这一部分就是写文件和获取文件的地方了。<br>我先尝试连接喜马拉雅的m4a文件。（后来想想其实应该先打开本地文件的…），如果打不开则代表无法找到远程文件。如果打开了，就继续尝试打开本地的目标输出文件。本地的文件如果打不开，则代表缺少写权限等问题，关闭远程连接，抛出问题然后继续循环。如果两个连接都没有问题，那么OK，可以开始下载了。</p>
+<p>下载之后关闭两个连接，输出下载成功消息以及文件位置，以及文件大小。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSizeT</span><span class="params">($file)</span></span>&#123;</div><div class="line">    $fs = filesize($file);</div><div class="line">    <span class="keyword">if</span>($fs===<span class="keyword">false</span>) <span class="keyword">return</span> <span class="string">"UNKNOW"</span>;</div><div class="line">    $size = round(($fs/<span class="number">1024</span>)/<span class="number">1024</span>,<span class="number">2</span>).<span class="string">"MB"</span>;</div><div class="line">    <span class="keyword">return</span> $size;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>到此整个程序完成，试着跑了一下，效果还是不错的。<br>这个项目作为一次练手也作为帮别人写的一个工具，以后不会再更新。本文写的时候有一些新的改动并没有同步到gh中，可以以本文为准。<br><a href="https://github.com/Cansll/XiMaLaYa-Get[喜马拉雅音频获取工具" target="_blank" rel="external">https://github.com/Cansll/XiMaLaYa-Get[喜马拉雅音频获取工具</a> Github]</p>
+<p>CKylinMC<br>2017年9月13日</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/喜马拉雅/" rel="tag"># 喜马拉雅</a>
+          
+            <a href="/tags/kymd/" rel="tag"># kymd</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/16/我来了，Hexo/" rel="next" title="我来了，Hexo!">
+                <i class="fa fa-chevron-left"></i> 我来了，Hexo!
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://avatars2.githubusercontent.com/u/11648014?v=4"
+              alt="CKylinMC" />
+          
+            <p class="site-author-name" itemprop="name">CKylinMC</p>
+            <p class="site-description motion-element" itemprop="description">CKylinMC 的个人博客</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript版-失败"><span class="nav-number">1.</span> <span class="nav-text">Javascript版 - 失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP版-成功"><span class="nav-number">2.</span> <span class="nav-text">PHP版 成功</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CKylinMC</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
