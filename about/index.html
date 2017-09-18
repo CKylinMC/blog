@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="CKylinMyBlog">
 <meta property="og:description" content="想了好久，还是用Hexo了啊…一开始是懒，真的懒，想找个托管博客程序但是访问慢，手里的域名也会浪费，后来用静态网站，确定在GH Pages搭建以后看到了 hubpress.io ，好像不错，就部署起来。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-16T10:54:48.868Z">
+<meta property="og:updated_time" content="2017-09-18T14:34:33.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于">
 <meta name="twitter:description" content="想了好久，还是用Hexo了啊…一开始是懒，真的懒，想找个托管博客程序但是访问慢，手里的域名也会浪费，后来用静态网站，确定在GH Pages搭建以后看到了 hubpress.io ，好像不错，就部署起来。">
@@ -126,7 +126,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
@@ -337,6 +337,11 @@
 </ul>
 <p>反正就是不成熟，不过创意真的不错的。bug太多终究是用不了，还是走常规路线吧。看了看好像jekyll和hexo是比较热门的静态生成，我因为之前有安nodejs就直接用hexo了。配置不麻烦，选主题花了半天，最后还是确定用这个大众脸了。</p>
 <p>希望这次不会有问题吧。。</p>
+<p>我的GH：<br><div style="text-align:center">
+  <div class="github-card" data-user="Cansll" data-repo="" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+</p>
 <p>2017年9月16日<br>CKylinMC</p>
 
         
@@ -376,6 +381,8 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -478,6 +485,20 @@
 
         
         
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.funmc.cc" title="幻星梦MCPE" target="_blank">幻星梦MCPE</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
         
 
@@ -505,6 +526,8 @@
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
           
         </div>
       
