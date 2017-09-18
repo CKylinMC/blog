@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="CKylinMyBlog">
 <meta property="og:description" content="学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-16T11:51:37.242Z">
+<meta property="og:updated_time" content="2017-09-18T14:13:16.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="喜马拉雅音频获取小工具">
 <meta name="twitter:description" content="学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小">
@@ -128,7 +128,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -357,7 +357,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-18T22:13:16+08:00">
+                2017-09-18
+              </time>
             
           </span>
 
@@ -452,6 +464,11 @@
 <p>这一部分就是写文件和获取文件的地方了。<br>我先尝试连接喜马拉雅的m4a文件。（后来想想其实应该先打开本地文件的…），如果打不开则代表无法找到远程文件。如果打开了，就继续尝试打开本地的目标输出文件。本地的文件如果打不开，则代表缺少写权限等问题，关闭远程连接，抛出问题然后继续循环。如果两个连接都没有问题，那么OK，可以开始下载了。</p>
 <p>下载之后关闭两个连接，输出下载成功消息以及文件位置，以及文件大小。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSizeT</span><span class="params">($file)</span></span>&#123;</div><div class="line">    $fs = filesize($file);</div><div class="line">    <span class="keyword">if</span>($fs===<span class="keyword">false</span>) <span class="keyword">return</span> <span class="string">"UNKNOW"</span>;</div><div class="line">    $size = round(($fs/<span class="number">1024</span>)/<span class="number">1024</span>,<span class="number">2</span>).<span class="string">"MB"</span>;</div><div class="line">    <span class="keyword">return</span> $size;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>到此整个程序完成，试着跑了一下，效果还是不错的。<br>这个项目作为一次练手也作为帮别人写的一个工具，以后不会再更新。本文写的时候有一些新的改动并没有同步到gh中，可以以本文为准。<br><a href="https://github.com/Cansll/XiMaLaYa-Get" target="_blank" rel="external">喜马拉雅音频获取工具 Github</a></p>
+<div style="text-align:center">
+  <div class="github-card" data-user="Cansll" data-repo="XiMaLaYa-Get" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+
 <p>CKylinMC<br>2017年9月13日</p>
 
       
@@ -516,6 +533,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/18/usefulbookmarks/" rel="prev" title="常用书签">
+                常用书签 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -597,7 +618,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -608,7 +629,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -619,7 +640,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -637,6 +658,26 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/canszj" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:canszj@yeah.net" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/canszj" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+              </span>
+            
           
         </div>
 

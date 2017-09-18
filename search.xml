@@ -3,6 +3,91 @@
   
     
     <entry>
+      <title><![CDATA[[喜马拉雅音频工具] 更新：新增文件名格式和用户名字典]]></title>
+      <url>/2017/09/18/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E9%9F%B3%E9%A2%91%E5%B7%A5%E5%85%B7-%E6%9B%B4%E6%96%B0%EF%BC%9A%E6%96%B0%E5%A2%9E%E6%96%87%E4%BB%B6%E5%90%8D%E6%A0%BC%E5%BC%8F%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E5%AD%97%E5%85%B8/</url>
+      <content type="html"><![CDATA[<p>根据同学实际使用时的需求，进一步改进程序。<br><a id="more"></a></p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>同学在实际使用的时候由于我文件名写死在程序内所以需要每次下载完文件后手动修改文件名。而且由于我班同学注册喜马拉雅的用户名并不一定是真名注册（emmm我也不是…真名注册的心也太大了…）所以交作业的时候还得知道每个人的用户名是什么，改成对应人名。好的，需求来了：</p>
+<ul>
+<li>允许自定义文件名</li>
+<li>要求可以直接替换掉同学的用户名</li>
+</ul>
+<p>（大概以上两点实现以后基本上就不用反复修改文件名了）</p>
+<p>想法是这样的：新建一个配置文件和字典文件，用简单的<code>key=value</code>格式。<br>配置文件可以放文件名格式，字典文件放每个同学的名字对应关系。</p>
+<p>放上两个文件创建和读取的方法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readDict</span><span class="params">()</span></span>&#123;</div><div class="line">    $dict = dirname(<span class="keyword">__FILE__</span>).DIRECTORY_SEPARATOR.<span class="string">"dict.txt"</span>;</div><div class="line">    <span class="keyword">if</span>(!file_exists($dict)) &#123;</div><div class="line">        fclose(fopen($dict,<span class="string">"w"</span>));</div><div class="line">        output(<span class="string">"[*] 字典文件创建成功!"</span>);</div><div class="line">    &#125;</div><div class="line">    $lines = file($dict);<span class="comment">//str_replace(PHP_EOL,"",file($config));</span></div><div class="line">    $dtdata = <span class="keyword">array</span>();</div><div class="line">    <span class="keyword">foreach</span>($lines <span class="keyword">as</span> $line)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">empty</span>($line)) <span class="keyword">continue</span>;</div><div class="line">        $result = explode(<span class="string">"="</span>,str_replace(PHP_EOL,<span class="string">""</span>,$line));</div><div class="line">        $dtdata[$result[<span class="number">0</span>]] = $result[<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $dtdata;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readConfig</span><span class="params">()</span></span>&#123;</div><div class="line">    $config = dirname(<span class="keyword">__FILE__</span>).DIRECTORY_SEPARATOR.<span class="string">"options.txt"</span>;</div><div class="line">    <span class="keyword">if</span>(!file_exists($config)) &#123;</div><div class="line">        $f = fopen($config,<span class="string">"w"</span>);</div><div class="line">        fwrite($f,<span class="string">"nameformat=%name-%title-%album-%time-%ran"</span>.PHP_EOL.<span class="string">"autoConvert=false"</span>.PHP_EOL);</div><div class="line">        fclose($f);</div><div class="line">        output(<span class="string">"[*] 配置文件创建成功!"</span>);</div><div class="line">        output(<span class="string">"[*] 文件名可用参数：\n\n\t%name\t\t真实姓名(无对应时输出用户名)\n\t%user\t\t用户名\n\t%duration\t音频长度(秒)\n\t%time\t\t中文相对时间\n\t%album\t\t专辑名\n\t%realtime\t上传日期\n\t%title\t\t音频标题\n\t%ran\t\t随机数\n"</span>);</div><div class="line">    &#125;</div><div class="line">    $lines = file($config);<span class="comment">//str_replace(PHP_EOL,"",file($config));</span></div><div class="line">    $cfg = <span class="keyword">array</span>();</div><div class="line">    <span class="keyword">foreach</span>($lines <span class="keyword">as</span> $line)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">empty</span>($line)) <span class="keyword">continue</span>;</div><div class="line">        $result = explode(<span class="string">"="</span>,str_replace(PHP_EOL,<span class="string">""</span>,$line));</div><div class="line">        $cfg[$result[<span class="number">0</span>]] = $result[<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $cfg;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为懒么，所以把首次创建和读取写在一起，虽然这样会导致每次下载都会读取一遍，但是因为每个链接都是单次输入的，因为读取两个小文件导致的延误不会太高，所以一次读取的事情放到下次更新。</p>
+<p>先判断文件是否存在，不存在就创建并写入默认内容。如果是配置文件，则顺便输出一下相关的变量。</p>
+<p>(autoConvert参数是一个正在实现的功能，见下文)</p>
+<p>这里使用<code>file()</code>函数把所有文件按行读取，然后逐行判断。如果是空行就跳过，然后分割<code>=</code>，等号前面是<code>key</code>，等号后面是<code>value</code>，然后把结果直接放进配置数组中。这里暂时还是缺少一些安全判断的。</p>
+<p>由于按照行读取会把行尾换行符一并读上，所以分割之前要把换行符替换掉。</p>
+<p>然后就是字典匹配人名，一个很简单的函数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">($name)</span></span>&#123;</div><div class="line">    $dict = readDict();</div><div class="line">    <span class="keyword">if</span>(array_key_exists($name,$dict))&#123;</div><div class="line">        $fn = $dict[$name];</div><div class="line">        output(<span class="string">"[*] 用户字典：'$name'已替换为'$fn'"</span>);</div><div class="line">        <span class="keyword">return</span> $fn;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $name;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先读取字典，然后判断是否有指定的名字，然后直接读取值返回。</p>
+<p>之后是获取文件名：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFileName</span><span class="params">($r)</span></span>&#123;</div><div class="line">    $rules = <span class="keyword">array</span>(</div><div class="line">        <span class="string">"%name"</span>=&gt;getName(t($r[<span class="string">'nickname'</span>])),</div><div class="line">        <span class="string">"%user"</span>=&gt;t($r[<span class="string">'nickname'</span>]),</div><div class="line">        <span class="string">"%duration"</span>=&gt;t($r[<span class="string">'duration'</span>]),</div><div class="line">        <span class="string">"%time"</span> =&gt; t($r[<span class="string">'time_until_now'</span>]),</div><div class="line">        <span class="string">"%album"</span> =&gt; t($r[<span class="string">'album_title'</span>]),</div><div class="line">        <span class="string">"%realtime"</span> =&gt; t($r[<span class="string">'formatted_created_at'</span>]),</div><div class="line">        <span class="string">"%title"</span> =&gt; t($r[<span class="string">'title'</span>]),</div><div class="line">        <span class="string">"%ran"</span> =&gt; rand(<span class="number">00001</span>, <span class="number">99999</span>),</div><div class="line">    );</div><div class="line">    $cfg = readConfig();</div><div class="line">    $base = <span class="string">"%name-%title-%album-%time-%ran"</span>;</div><div class="line">    <span class="keyword">if</span>(array_key_exists(<span class="string">"nameformat"</span>,$cfg))&#123;</div><div class="line">        $base = $cfg[<span class="string">'nameformat'</span>];</div><div class="line">    &#125;</div><div class="line">    $filename = strtr($base,$rules).<span class="string">".m4a"</span>;</div><div class="line">    <span class="keyword">return</span> $filename;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里将之前<code>$r</code>也就是获取到的api数据传入以便获得所有需要的数据。我将所有定义的变量对应了值放在一个数组中，读取配置。如果配置中有设置文件名，那么就使用设定的文件名，否则使用预设的文件名。然后再把文件名中的所用变量替换成对应值。注意这里依然缺少两个安全判断，一个是文件名格式，一个是变量的格式，如果格式不正确也是不能正确创建文件的，这个我以后更新。因为之前看到一片文章说<code>strtr</code>替换速度比<code>str_replace</code>快4倍，所以这里用strtr。（其实还是懒，虽然差不了几个字母…）。最后拼上<code>.m4a</code>后缀。</p>
+<p>最后插入到主线程。打开程序时自动创建文件，就先读取一次所有配置就好了：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line">output($copyright.<span class="string">"\n\n"</span>.$logo);</div><div class="line"><span class="comment">//init config</span></div><div class="line">output();</div><div class="line">readConfig();</div><div class="line">readDict();</div><div class="line"><span class="comment">//UI MODE</span></div><div class="line">output(<span class="string">"\n\n[*] 欢迎使用喜马拉雅FM音频下载工具！"</span>);</div><div class="line">......</div></pre></td></tr></table></figure></p>
+<p>然后是获取文件名这里直接换掉：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line"><span class="comment">//        $filename = "$user-$title-$album-$time-$ran.m4a";</span></div><div class="line">        $filename = getFileName($r);</div><div class="line">        raw_output(t(<span class="string">"\n\n[*] 准备下载..."</span>).<span class="string">"($filename)"</span>);</div><div class="line">        $path = dirname(<span class="keyword">__FILE__</span>) . DIRECTORY_SEPARATOR . <span class="string">"audios"</span> . DIRECTORY_SEPARATOR;</div><div class="line">......</div></pre></td></tr></table></figure></p>
+<p>我顺便把后面的路径中的分隔符换了一下。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>关于之间说的MP3和M4A格式转换的问题，有两个方案。一个是放一个ffmpeg什么的调用转换，使用<code>exec()</code>命令调用就行。另一个是我无意中发现的另一个api，从喜马拉雅后台揪出来的api：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.ximalaya.com/center/voice/download?trackId=</div></pre></td></tr></table></figure>
+<p>这条API会下载原始大小的MP3（说起来我上传的是wav来着）虽然还是转码过的但是已经是mp3了，大小很可观。而且…</p>
+<h5 id="我在浏览器里访问的时候能正常下载，调用时就不行，502-Bad-Gateway…"><a href="#我在浏览器里访问的时候能正常下载，调用时就不行，502-Bad-Gateway…" class="headerlink" title="我在浏览器里访问的时候能正常下载，调用时就不行，502 Bad Gateway…"></a>我在浏览器里访问的时候能正常下载，调用时就不行，502 Bad Gateway…</h5><p>emmmmm…再看看吧…</p>
+<hr>
+<p>本次更新 commit:</p>
+<p><a href="https://github.com/Cansll/XiMaLaYa-Get/commit/4b5c14b6746994e2c4a8dab84578c9ff0fe714ef" target="_blank" rel="external">添加功能 · Cansll/XiMaLaYa-Get@ab5c14b</a></p>
+<div style="text-align:center">
+  <div class="github-card" data-user="Cansll" data-repo="XiMaLaYa-Get" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+
+<p>2017年9月18日<br>CKylinMC</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 小作品 </category>
+            
+            <category> 编程开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> php </tag>
+            
+            <tag> 喜马拉雅 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[常用书签]]></title>
+      <url>/2017/09/18/usefulbookmarks/</url>
+      <content type="html"><![CDATA[<p>可能用得到的一些书签，需要的时候拖动到书签栏就好了</p>
+<h3 id="一键复制网页信息"><a href="#一键复制网页信息" class="headerlink" title="一键复制网页信息"></a>一键复制网页信息</h3><p><a href="javascript:prompt('手动复制：',document.title+'_链接：'+location.href)" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">一键复制网页信息</a>（拖动到书签栏，在需要分享页面点击即可复制内容）</p>
+<h3 id="蓝墨云班课-PDF-下载"><a href="#蓝墨云班课-PDF-下载" class="headerlink" title="蓝墨云班课 - PDF 下载"></a>蓝墨云班课 - PDF 下载</h3><p><a href="javascript:PDFViewerApplication.download()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">蓝墨云班课 PDF 下载</a>（拖动到书签栏，打开资源中的PDF，然后点击书签栏中的此链接）</p>
+<h3 id="B站快速访问"><a href="#B站快速访问" class="headerlink" title="B站快速访问"></a>B站快速访问</h3><p><a href="javascript:open('https://www.bilibili.com/av'+prompt('输入av号','','avxxxxxx').replace('av',''))" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">B站快速访问</a>（拖动到书签栏，点击书签栏中的此链接，输入av号跳转）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 闲言碎语 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 书签 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[喜马拉雅音频获取小工具]]></title>
       <url>/2017/09/16/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E9%9F%B3%E9%A2%91%E5%B7%A5%E5%85%B7/</url>
       <content type="html"><![CDATA[<p>学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小程序来做到直接下载。（音频ID同样出现在每个音频页面的URL中。）<br><a id="more"></a></p>
@@ -30,6 +115,11 @@
 <p>这一部分就是写文件和获取文件的地方了。<br>我先尝试连接喜马拉雅的m4a文件。（后来想想其实应该先打开本地文件的…），如果打不开则代表无法找到远程文件。如果打开了，就继续尝试打开本地的目标输出文件。本地的文件如果打不开，则代表缺少写权限等问题，关闭远程连接，抛出问题然后继续循环。如果两个连接都没有问题，那么OK，可以开始下载了。</p>
 <p>下载之后关闭两个连接，输出下载成功消息以及文件位置，以及文件大小。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSizeT</span><span class="params">($file)</span></span>&#123;</div><div class="line">    $fs = filesize($file);</div><div class="line">    <span class="keyword">if</span>($fs===<span class="keyword">false</span>) <span class="keyword">return</span> <span class="string">"UNKNOW"</span>;</div><div class="line">    $size = round(($fs/<span class="number">1024</span>)/<span class="number">1024</span>,<span class="number">2</span>).<span class="string">"MB"</span>;</div><div class="line">    <span class="keyword">return</span> $size;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>到此整个程序完成，试着跑了一下，效果还是不错的。<br>这个项目作为一次练手也作为帮别人写的一个工具，以后不会再更新。本文写的时候有一些新的改动并没有同步到gh中，可以以本文为准。<br><a href="https://github.com/Cansll/XiMaLaYa-Get" target="_blank" rel="external">喜马拉雅音频获取工具 Github</a></p>
+<div style="text-align:center">
+  <div class="github-card" data-user="Cansll" data-repo="XiMaLaYa-Get" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+
 <p>CKylinMC<br>2017年9月13日</p>
 ]]></content>
       
@@ -84,11 +174,9 @@
   
     
     <entry>
-      <title></title>
-      <url>/readme.html</url>
-      <content type="html"><![CDATA[<h1 id="MyBlog"><a href="#MyBlog" class="headerlink" title="MyBlog"></a>MyBlog</h1><p>我的博客</p>
-<p><a href="http://blog.ckylin-mc.cn" target="_blank" rel="external">http://blog.ckylin-mc.cn</a></p>
-]]></content>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
@@ -110,12 +198,6 @@
     <entry>
       <title><![CDATA[标签]]></title>
       <url>/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
