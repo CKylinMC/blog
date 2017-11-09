@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ckylin-mc.cn/"/>
-  <updated>2017-09-18T14:11:59.719Z</updated>
+  <updated>2017-11-09T10:16:45.809Z</updated>
   <id>http://www.ckylin-mc.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ViaIndex更新(1.6)</title>
+    <link href="http://www.ckylin-mc.cn/2017/11/09/ViaIndex%E6%9B%B4%E6%96%B0-1-6/"/>
+    <id>http://www.ckylin-mc.cn/2017/11/09/ViaIndex更新-1-6/</id>
+    <published>2017-11-09T09:55:00.000Z</published>
+    <updated>2017-11-09T10:16:45.809Z</updated>
+    
+    <content type="html"><![CDATA[<p>2017年11月9日 ViaIndex周更新记录<br><a id="more"></a></p><h3 id="本周更新："><a href="#本周更新：" class="headerlink" title="本周更新："></a>本周更新：</h3><ul><li>添加 标题时段文本两种模式可以修改（暂无开关）</li></ul><p>当设置参数“titlemode”不为“TIPS”时标题切换到“基本时间”模式，默认为问候语模式。<a href="https://github.com/Cansll/ViaIndex/commit/457b402303f5f00298ac010561c943c86deee571#diff-e060d80d78ee925784f114c61f56c55cR618" target="_blank" rel="external">code</a></p><ul><li>更换x0popup为Windowise</li></ul><p>将x0popup更换为原作者的新作品Windowise。<a href="https://github.com/Cansll/ViaIndex/commit/457b402303f5f00298ac010561c943c86deee571#diff-e060d80d78ee925784f114c61f56c55cR12" target="_blank" rel="external">code</a></p><ul><li>添加 一言</li></ul><p>使用一言网的API添加了一言卡片。可以自行控制开启和关闭以及分类。<a href="https://github.com/Cansll/ViaIndex/commit/457b402303f5f00298ac010561c943c86deee571#diff-e060d80d78ee925784f114c61f56c55cR269" target="_blank" rel="external">code</a></p><ul><li>从一言卡片开始使用新的动态卡片创建逻辑</li></ul><p>现在可以动态创建新的卡片而不需要在主页创建静态的卡片占位了。<a href="https://github.com/Cansll/ViaIndex/commit/457b402303f5f00298ac010561c943c86deee571#diff-e060d80d78ee925784f114c61f56c55cR1089" target="_blank" rel="external">code</a></p><ul><li><p>版本号进1.6</p></li><li><p>现在ViaIndex会自动判断是开发测试模式还是发布模式</p></li></ul><p>会自动设定当前页面变量。后面会有一些显示只在开发测试模式中。<a href="https://github.com/Cansll/ViaIndex/commit/36037af36acc3b965563c0ad83a0ca5bb0414aee#diff-e060d80d78ee925784f114c61f56c55cR33" target="_blank" rel="external">code</a></p><ul><li>添加 新闻</li></ul><p>使用大谷哥API添加了新闻卡片，可以点开查看简短的介绍，可选择分类。<a href="https://github.com/Cansll/ViaIndex/commit/36037af36acc3b965563c0ad83a0ca5bb0414aee#diff-e060d80d78ee925784f114c61f56c55cR484" target="_blank" rel="external">code</a></p><ul><li>修改主页页脚</li></ul><p>将主页的页脚中作者博客更新为现在的地址。<a href="https://github.com/Cansll/ViaIndex/commit/ec0de4b4b0d6a1cb59ea65844d3f6f03fdaa2b84#diff-eacf331f0ffc35d4b482f1d15a887d3bR108" target="_blank" rel="external">code</a></p><ul><li>正在测试设置卡片</li></ul><p>设置卡片仍在规划阶段，一个小的DEMO已经添加到了ViaIndex中，但仍然有BUG。<a href="https://github.com/Cansll/ViaIndex/commit/ec0de4b4b0d6a1cb59ea65844d3f6f03fdaa2b84#diff-e060d80d78ee925784f114c61f56c55cR1398" target="_blank" rel="external">code</a></p><hr><h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h3><ul><li style="list-style: none"><input type="checkbox"> 尝试支持自定义常用网站功能</li><li style="list-style: none"><input type="checkbox"> 尝试支持设置导入导出以及更多自定义方案。</li></ul><hr><h1 id="ViaIndex"><a href="#ViaIndex" class="headerlink" title="ViaIndex"></a>ViaIndex</h1><p>My own via index<br>一个给自己胡乱写的手机浏览器主页<br>叫ViaIndex原因是一开始是为Via浏览器做的自用开始页面</p><p>仅支持竖屏手机。</p><p><a href="javascript:location.href=&quot;http://via.ckylin-mc.cn&quot;" target="_blank" rel="external">地址：http://via.ckylin-mc.cn</a></p><div style="text-align:center">  <div class="github-card" data-user="Cansll" data-repo="ViaIndex" data-width="400" data-theme="default" data-target="" data-client-id="" data-client-secret=""></div></div><script src="/github-card-lib/githubcard.js"></script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年11月9日 ViaIndex周更新记录&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程开发" scheme="http://www.ckylin-mc.cn/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="小作品" scheme="http://www.ckylin-mc.cn/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/%E5%B0%8F%E4%BD%9C%E5%93%81/"/>
+    
+    
+      <category term="ViaIndex" scheme="http://www.ckylin-mc.cn/tags/ViaIndex/"/>
+    
+  </entry>
   
   <entry>
     <title>[喜马拉雅音频工具] 更新：新增文件名格式和用户名字典</title>
@@ -47,9 +71,9 @@
     <link href="http://www.ckylin-mc.cn/2017/09/18/usefulbookmarks/"/>
     <id>http://www.ckylin-mc.cn/2017/09/18/usefulbookmarks/</id>
     <published>2017-09-18T11:04:00.000Z</published>
-    <updated>2017-09-18T11:36:52.699Z</updated>
+    <updated>2017-09-24T06:27:19.842Z</updated>
     
-    <content type="html"><![CDATA[<p>可能用得到的一些书签，需要的时候拖动到书签栏就好了</p><h3 id="一键复制网页信息"><a href="#一键复制网页信息" class="headerlink" title="一键复制网页信息"></a>一键复制网页信息</h3><p><a href="javascript:prompt('手动复制：',document.title+'_链接：'+location.href)" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">一键复制网页信息</a>（拖动到书签栏，在需要分享页面点击即可复制内容）</p><h3 id="蓝墨云班课-PDF-下载"><a href="#蓝墨云班课-PDF-下载" class="headerlink" title="蓝墨云班课 - PDF 下载"></a>蓝墨云班课 - PDF 下载</h3><p><a href="javascript:PDFViewerApplication.download()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">蓝墨云班课 PDF 下载</a>（拖动到书签栏，打开资源中的PDF，然后点击书签栏中的此链接）</p><h3 id="B站快速访问"><a href="#B站快速访问" class="headerlink" title="B站快速访问"></a>B站快速访问</h3><p><a href="javascript:open('https://www.bilibili.com/av'+prompt('输入av号','','avxxxxxx').replace('av',''))" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">B站快速访问</a>（拖动到书签栏，点击书签栏中的此链接，输入av号跳转）</p>]]></content>
+    <content type="html"><![CDATA[<p>可能用得到的一些书签，需要的时候拖动到书签栏就好了</p><h3 id="一键复制网页信息"><a href="#一键复制网页信息" class="headerlink" title="一键复制网页信息"></a>一键复制网页信息</h3><p><a href="javascript:prompt('手动复制：',document.title+'_链接：'+location.href)" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">一键复制网页信息</a>（拖动到书签栏，在需要分享页面点击即可复制内容）</p><h3 id="蓝墨云班课-PDF-下载"><a href="#蓝墨云班课-PDF-下载" class="headerlink" title="蓝墨云班课 - PDF 下载"></a>蓝墨云班课 - PDF 下载</h3><p><a href="javascript:PDFViewerApplication.download()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">蓝墨云班课 PDF 下载</a>（拖动到书签栏，打开资源中的PDF，然后点击书签栏中的此链接）</p><h3 id="B站快速访问"><a href="#B站快速访问" class="headerlink" title="B站快速访问"></a>B站快速访问</h3><p><a href="javascript:open('https://www.bilibili.com/av'+prompt('输入av号','','avxxxxxx').replace('av',''))" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">B站快速访问</a>（拖动到书签栏，点击书签栏中的此链接，输入av号跳转）</p><h3 id="特殊跳转链接"><a href="#特殊跳转链接" class="headerlink" title="特殊跳转链接"></a>特殊跳转链接</h3><p><a href="javascript:(function(){let a=prompt('输入特殊协议链接：','','');if(a) open(a);else console.error('空链接 '+a)})()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">特殊跳转链接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）</p><blockquote><p>此书签用于测试。比如一些特殊协议的app链接”ms-settings”之类的。</p></blockquote>]]></content>
     
     <summary type="html">
     
