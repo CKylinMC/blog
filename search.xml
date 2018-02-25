@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title><![CDATA[[Chrome扩展] 哔哩哔哩智能搜索 v1.0]]></title>
+      <url>/2018/02/25/Chrome%E6%89%A9%E5%B1%95-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2-v1-0/</url>
+      <content type="html"><![CDATA[<p>我把书签的哔哩哔哩智能搜索打包成了Chrome扩展，并且添加了最新专栏文章(“cv”开头)的支持。</p>
+<a id="more"></a>
+<p>下载地址：<a href="/files/bilibiliSmartSearch_1.0.zip">bilibiliSmartSearch_1.0.zip</a></p>
+<p>安装方法：</p>
+<ul>
+<li>下载 <code>bilibiliSmartSearch_1.0.zip</code> ，解压出文件 <code>bilibiliSmartSearch_1.0.crx</code></li>
+<li>打开 Chrome 浏览器</li>
+<li>访问 <code>chrome://extensions</code> 页面</li>
+<li>将 <code>bilibiliSmartSearch_1.0.crx</code> 拖到页面中，安装。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 小作品 </category>
+            
+            <category> 编程开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> chrome extensions </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[[书签更新] 哔哩哔哩智能搜索]]></title>
       <url>/2018/01/09/%E4%B9%A6%E7%AD%BE%E6%9B%B4%E6%96%B0-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2/</url>
       <content type="html"><![CDATA[<p>要考试了，复习了一天数学，大脑爆炸。赶紧敲几行代码换换脑子。<br><a id="more"></a><br>大概的代码就是这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">value = prompt(<span class="string">'哔哩哔哩智能搜索\n\n输入你想搜索或跳转的位置：'</span>, <span class="string">''</span>, <span class="string">'AV号/ANIME号/EP号/UID号/视频关键词'</span>);</div><div class="line">key = value.toLowerCase();</div><div class="line">baselink=<span class="string">'https://www.bilibili.com/'</span>;</div><div class="line">baselive=<span class="string">'https://live.bilibili.com/'</span>;</div><div class="line">basesearch=<span class="string">'https://search.bilibili.com/'</span>;</div><div class="line">basespace=<span class="string">'https://space.bilibili.com/'</span>;</div><div class="line">basebangumi=<span class="string">'https://bangumi.bilibili.com/'</span>;</div><div class="line">url=<span class="string">"javascript:alert('关键词为空或出现错误！');close()"</span>;</div><div class="line">cated=<span class="literal">false</span>;</div><div class="line"><span class="keyword">if</span>(value.length===<span class="number">0</span>||value==<span class="string">" "</span>)&#123;</div><div class="line">	cated=<span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(key.indexOf(<span class="string">"av"</span>)===<span class="number">0</span>&amp;&amp;key.length&gt;<span class="number">2</span>)&#123;</div><div class="line">	cated=<span class="literal">true</span>;</div><div class="line">	url=baselink+<span class="string">"av"</span>+value.replace(<span class="string">"av"</span>,<span class="string">""</span>).replace(<span class="string">"AV"</span>,<span class="string">""</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(key.indexOf(<span class="string">"anime"</span>)===<span class="number">0</span>&amp;&amp;key.length&gt;<span class="number">5</span>)&#123;</div><div class="line">	cated=<span class="literal">true</span>;</div><div class="line">	url=basebangumi+<span class="string">"anime/"</span>+value.replace(<span class="string">"anime"</span>,<span class="string">""</span>).replace(<span class="string">"ANIME"</span>,<span class="string">""</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(key.indexOf(<span class="string">"ep"</span>)===<span class="number">0</span>&amp;&amp;key.length&gt;<span class="number">2</span>)&#123;</div><div class="line">	cated=<span class="literal">true</span>;</div><div class="line">	url=baselink+<span class="string">"bangumi/play/ep"</span>+value.replace(<span class="string">"ep"</span>,<span class="string">""</span>).replace(<span class="string">"EP"</span>,<span class="string">""</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(key.indexOf(<span class="string">"uid"</span>)===<span class="number">0</span>&amp;&amp;key.length&gt;<span class="number">4</span>)&#123;</div><div class="line">	cated=<span class="literal">true</span>;</div><div class="line">	url=basespace+value.replace(<span class="string">"uid:"</span>,<span class="string">""</span>).replace(<span class="string">"uid"</span>,<span class="string">""</span>).replace(<span class="string">"UID:"</span>,<span class="string">""</span>).replace(<span class="string">"UID"</span>,<span class="string">""</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(key.indexOf(<span class="string">"live"</span>)===<span class="number">0</span>&amp;&amp;key.length&gt;<span class="number">4</span>)&#123;</div><div class="line">	cated=<span class="literal">true</span>;</div><div class="line">	url=baselive+value.replace(<span class="string">"live"</span>,<span class="string">""</span>).replace(<span class="string">"LIVE"</span>,<span class="string">""</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(!cated)&#123;</div><div class="line">	url=basesearch+<span class="string">"all?keyword="</span>+value;</div><div class="line">&#125;</div><div class="line">open(url);</div></pre></td></tr></table></figure></p>
@@ -152,9 +186,9 @@
         
         <tags>
             
-            <tag> php </tag>
-            
             <tag> 喜马拉雅 </tag>
+            
+            <tag> php </tag>
             
         </tags>
         
@@ -236,11 +270,11 @@
         
         <tags>
             
-            <tag> javascript </tag>
+            <tag> 喜马拉雅 </tag>
             
             <tag> php </tag>
             
-            <tag> 喜马拉雅 </tag>
+            <tag> javascript </tag>
             
             <tag> kymd </tag>
             

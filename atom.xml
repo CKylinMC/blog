@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ckylin-mc.cn/"/>
-  <updated>2018-01-09T12:36:54.072Z</updated>
+  <updated>2018-02-25T13:55:30.125Z</updated>
   <id>http://www.ckylin-mc.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Chrome扩展] 哔哩哔哩智能搜索 v1.0</title>
+    <link href="http://www.ckylin-mc.cn/2018/02/25/Chrome%E6%89%A9%E5%B1%95-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2-v1-0/"/>
+    <id>http://www.ckylin-mc.cn/2018/02/25/Chrome扩展-哔哩哔哩智能搜索-v1-0/</id>
+    <published>2018-02-25T13:49:00.000Z</published>
+    <updated>2018-02-25T13:55:30.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>我把书签的哔哩哔哩智能搜索打包成了Chrome扩展，并且添加了最新专栏文章(“cv”开头)的支持。</p><a id="more"></a><p>下载地址：<a href="/files/bilibiliSmartSearch_1.0.zip">bilibiliSmartSearch_1.0.zip</a></p><p>安装方法：</p><ul><li>下载 <code>bilibiliSmartSearch_1.0.zip</code> ，解压出文件 <code>bilibiliSmartSearch_1.0.crx</code></li><li>打开 Chrome 浏览器</li><li>访问 <code>chrome://extensions</code> 页面</li><li>将 <code>bilibiliSmartSearch_1.0.crx</code> 拖到页面中，安装。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我把书签的哔哩哔哩智能搜索打包成了Chrome扩展，并且添加了最新专栏文章(“cv”开头)的支持。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小作品" scheme="http://www.ckylin-mc.cn/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/"/>
+    
+      <category term="编程开发" scheme="http://www.ckylin-mc.cn/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="http://www.ckylin-mc.cn/tags/javascript/"/>
+    
+      <category term="chrome extensions" scheme="http://www.ckylin-mc.cn/tags/chrome-extensions/"/>
+    
+  </entry>
   
   <entry>
     <title>[书签更新] 哔哩哔哩智能搜索</title>
@@ -84,9 +110,9 @@
       <category term="编程开发" scheme="http://www.ckylin-mc.cn/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="php" scheme="http://www.ckylin-mc.cn/tags/php/"/>
-    
       <category term="喜马拉雅" scheme="http://www.ckylin-mc.cn/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/"/>
+    
+      <category term="php" scheme="http://www.ckylin-mc.cn/tags/php/"/>
     
   </entry>
   
@@ -136,11 +162,11 @@
       <category term="小作品" scheme="http://www.ckylin-mc.cn/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/%E5%B0%8F%E4%BD%9C%E5%93%81/"/>
     
     
-      <category term="javascript" scheme="http://www.ckylin-mc.cn/tags/javascript/"/>
+      <category term="喜马拉雅" scheme="http://www.ckylin-mc.cn/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/"/>
     
       <category term="php" scheme="http://www.ckylin-mc.cn/tags/php/"/>
     
-      <category term="喜马拉雅" scheme="http://www.ckylin-mc.cn/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/"/>
+      <category term="javascript" scheme="http://www.ckylin-mc.cn/tags/javascript/"/>
     
       <category term="kymd" scheme="http://www.ckylin-mc.cn/tags/kymd/"/>
     

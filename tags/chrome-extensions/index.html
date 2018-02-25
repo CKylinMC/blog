@@ -107,7 +107,7 @@
 <meta name="description" content="CKylinMC 的个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CKylinMyBlog">
-<meta property="og:url" content="http://www.ckylin-mc.cn/tags/JavaScript/index.html">
+<meta property="og:url" content="http://www.ckylin-mc.cn/tags/chrome-extensions/index.html">
 <meta property="og:site_name" content="CKylinMyBlog">
 <meta property="og:description" content="CKylinMC 的个人博客">
 <meta property="og:locale" content="zh-Hans">
@@ -143,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ckylin-mc.cn/tags/JavaScript/"/>
+  <link rel="canonical" href="http://www.ckylin-mc.cn/tags/chrome-extensions/"/>
 
 
 
 
 
-  <title>标签: JavaScript | CKylinMyBlog</title>
+  <title>标签: chrome extensions | CKylinMyBlog</title>
   
 
 
@@ -313,7 +313,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>JavaScript<small>标签</small>
+        <h2>chrome extensions<small>标签</small>
         </h2>
       </div>
 
@@ -325,9 +325,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/01/09/书签更新-哔哩哔哩智能搜索/" itemprop="url">
+            <a class="post-title-link" href="/2018/02/25/Chrome扩展-哔哩哔哩智能搜索-v1-0/" itemprop="url">
               
-                <span itemprop="name">[书签更新] 哔哩哔哩智能搜索</span>
+                <span itemprop="name">[Chrome扩展] 哔哩哔哩智能搜索 v1.0</span>
               
             </a>
         
@@ -335,9 +335,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-09T20:26:00+08:00"
-              content="2018-01-09" >
-          01-09
+              datetime="2018-02-25T21:49:00+08:00"
+              content="2018-02-25" >
+          02-25
         </time>
       </div>
 
@@ -972,50 +972,6 @@
           proceedsearch();
         }
       });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-});
     }
 
     // handle and trigger popup window;
