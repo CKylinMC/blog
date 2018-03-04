@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ckylin-mc.cn/"/>
-  <updated>2018-02-25T13:55:30.125Z</updated>
+  <updated>2018-03-04T04:08:29.996Z</updated>
   <id>http://www.ckylin-mc.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[Chrome扩展] 哔哩哔哩智能搜索 v1.2 更新</title>
+    <link href="http://www.ckylin-mc.cn/2018/03/04/Chrome%E6%89%A9%E5%B1%95-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2-v1-2-%E6%9B%B4%E6%96%B0/"/>
+    <id>http://www.ckylin-mc.cn/2018/03/04/Chrome扩展-哔哩哔哩智能搜索-v1-2-更新/</id>
+    <published>2018-03-04T04:04:00.000Z</published>
+    <updated>2018-03-04T04:08:29.996Z</updated>
+    
+    <content type="html"><![CDATA[<p>哔哩哔哩智能搜索更新至1.2版本，新增常用b站链接功能</p><a id="more"></a><p>下载地址：<a href="/files/bilibiliSmartSearch_1.2.zip">bilibiliSmartSearch_1.2.zip</a></p><p>安装方法：</p><ul><li>下载 <code>bilibiliSmartSearch_1.2.zip</code> ，解压出文件 <code>bilibiliSmartSearch_1.2.crx</code></li><li>打开 Chrome 浏览器</li><li>访问 <code>chrome://extensions</code> 页面</li><li>将 <code>bilibiliSmartSearch_1.2.crx</code> 拖到页面中，安装。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;哔哩哔哩智能搜索更新至1.2版本，新增常用b站链接功能&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小作品" scheme="http://www.ckylin-mc.cn/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/"/>
+    
+      <category term="编程开发" scheme="http://www.ckylin-mc.cn/categories/%E5%B0%8F%E4%BD%9C%E5%93%81/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="javascript" scheme="http://www.ckylin-mc.cn/tags/javascript/"/>
+    
+      <category term="chrome extensions" scheme="http://www.ckylin-mc.cn/tags/chrome-extensions/"/>
+    
+      <category term="哔哩哔哩智能搜索" scheme="http://www.ckylin-mc.cn/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[Chrome扩展] 哔哩哔哩智能搜索 v1.0</title>
     <link href="http://www.ckylin-mc.cn/2018/02/25/Chrome%E6%89%A9%E5%B1%95-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2-v1-0/"/>
     <id>http://www.ckylin-mc.cn/2018/02/25/Chrome扩展-哔哩哔哩智能搜索-v1-0/</id>
     <published>2018-02-25T13:49:00.000Z</published>
-    <updated>2018-02-25T13:55:30.125Z</updated>
+    <updated>2018-03-04T04:08:08.552Z</updated>
     
     <content type="html"><![CDATA[<p>我把书签的哔哩哔哩智能搜索打包成了Chrome扩展，并且添加了最新专栏文章(“cv”开头)的支持。</p><a id="more"></a><p>下载地址：<a href="/files/bilibiliSmartSearch_1.0.zip">bilibiliSmartSearch_1.0.zip</a></p><p>安装方法：</p><ul><li>下载 <code>bilibiliSmartSearch_1.0.zip</code> ，解压出文件 <code>bilibiliSmartSearch_1.0.crx</code></li><li>打开 Chrome 浏览器</li><li>访问 <code>chrome://extensions</code> 页面</li><li>将 <code>bilibiliSmartSearch_1.0.crx</code> 拖到页面中，安装。</li></ul>]]></content>
     
@@ -39,6 +67,8 @@
       <category term="javascript" scheme="http://www.ckylin-mc.cn/tags/javascript/"/>
     
       <category term="chrome extensions" scheme="http://www.ckylin-mc.cn/tags/chrome-extensions/"/>
+    
+      <category term="哔哩哔哩智能搜索" scheme="http://www.ckylin-mc.cn/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
@@ -121,9 +151,9 @@
     <link href="http://www.ckylin-mc.cn/2017/09/18/usefulbookmarks/"/>
     <id>http://www.ckylin-mc.cn/2017/09/18/usefulbookmarks/</id>
     <published>2017-09-18T11:04:00.000Z</published>
-    <updated>2018-01-09T12:37:09.666Z</updated>
+    <updated>2018-03-04T04:09:26.850Z</updated>
     
-    <content type="html"><![CDATA[<p>可能用得到的一些书签，需要的时候拖动到书签栏就好了</p><h3 id="一键复制网页信息"><a href="#一键复制网页信息" class="headerlink" title="一键复制网页信息"></a>一键复制网页信息</h3><p><a href="javascript:prompt('手动复制：',document.title+'_链接：'+location.href)" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">一键复制网页信息</a>（拖动到书签栏，在需要分享页面点击即可复制内容）</p><h3 id="蓝墨云班课-PDF-下载"><a href="#蓝墨云班课-PDF-下载" class="headerlink" title="蓝墨云班课 - PDF 下载"></a>蓝墨云班课 - PDF 下载</h3><p><a href="javascript:PDFViewerApplication.download()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">蓝墨云班课 PDF 下载</a>（拖动到书签栏，打开资源中的PDF，然后点击书签栏中的此链接）</p><h3 id="B站快速访问"><a href="#B站快速访问" class="headerlink" title="B站快速访问"></a>B站快速访问</h3><p><a href="javascript:open('https://www.bilibili.com/av'+prompt('输入av号','','avxxxxxx').replace('av',''))" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">B站快速访问</a>（拖动到书签栏，点击书签栏中的此链接，输入av号跳转）</p><h3 id="B站智能搜索"><a href="#B站智能搜索" class="headerlink" title="B站智能搜索"></a>B站智能搜索</h3><p><a href="javascript:value=prompt('哔哩哔哩智能搜索 - CKylinMyBLOG\n\n支持的内容：\nAV号/ANIME号/EP号/UID号/LIVE号/视频关键词\n\n输入你想搜索或跳转的位置：','','AV号/ANIME号/EP号/UID号/视频关键词');key=value.toLowerCase();baselink='https://www.bilibili.com/';baselive='https://live.bilibili.com/';basesearch='https://search.bilibili.com/';basespace='https://space.bilibili.com/';basebangumi='https://bangumi.bilibili.com/';url=&quot;javascript:alert('关键词为空或出现错误！');close()&quot;;cated=false;if(value.length===0||value==&quot; &quot;){cated=true}if(key.indexOf(&quot;av&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;av&quot;+value.replace(&quot;av&quot;,&quot;&quot;).replace(&quot;AV&quot;,&quot;&quot;)}if(key.indexOf(&quot;anime&quot;)===0&amp;&amp;key.length>5){cated=true;url=basebangumi+&quot;anime/&quot;+value.replace(&quot;anime&quot;,&quot;&quot;).replace(&quot;ANIME&quot;,&quot;&quot;)}if(key.indexOf(&quot;ep&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;bangumi/play/ep&quot;+value.replace(&quot;ep&quot;,&quot;&quot;).replace(&quot;EP&quot;,&quot;&quot;)}if(key.indexOf(&quot;uid&quot;)===0&amp;&amp;key.length>4){cated=true;url=basespace+value.replace(&quot;uid:&quot;,&quot;&quot;).replace(&quot;uid&quot;,&quot;&quot;).replace(&quot;UID:&quot;,&quot;&quot;).replace(&quot;UID&quot;,&quot;&quot;)}if(key.indexOf(&quot;live&quot;)===0&amp;&amp;key.length>4){cated=true;url=baselive+value.replace(&quot;live&quot;,&quot;&quot;).replace(&quot;LIVE&quot;,&quot;&quot;)}if(!cated){url=basesearch+&quot;all?keyword=&quot;+value}open(url);" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">哔哩哔哩智能搜索</a>（拖动到书签栏，点击书签栏中的此链接，输入AV号/ANIME号/EP号/UID号/视频关键词直达）</p><h3 id="特殊跳转链接"><a href="#特殊跳转链接" class="headerlink" title="特殊跳转链接"></a>特殊跳转链接</h3><p><a href="javascript:(function(){let a=prompt('输入特殊协议链接：','','');if(a) open(a);else console.error('空链接 '+a)})()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">特殊跳转链接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）</p><blockquote><p>此书签用于测试。比如一些特殊协议的app链接”ms-settings”之类的。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>可能用得到的一些书签，需要的时候拖动到书签栏就好了</p><h3 id="一键复制网页信息"><a href="#一键复制网页信息" class="headerlink" title="一键复制网页信息"></a>一键复制网页信息</h3><p><a href="javascript:prompt('手动复制：',document.title+'_链接：'+location.href)" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">一键复制网页信息</a>（拖动到书签栏，在需要分享页面点击即可复制内容）</p><h3 id="蓝墨云班课-PDF-下载"><a href="#蓝墨云班课-PDF-下载" class="headerlink" title="蓝墨云班课 - PDF 下载"></a>蓝墨云班课 - PDF 下载</h3><p><a href="javascript:PDFViewerApplication.download()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">蓝墨云班课 PDF 下载</a>（拖动到书签栏，打开资源中的PDF，然后点击书签栏中的此链接）</p><h3 id="B站快速访问"><a href="#B站快速访问" class="headerlink" title="B站快速访问"></a>B站快速访问</h3><p><a href="javascript:open('https://www.bilibili.com/av'+prompt('输入av号','','avxxxxxx').replace('av',''))" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">B站快速访问</a>（拖动到书签栏，点击书签栏中的此链接，输入av号跳转）</p><h3 id="B站智能搜索"><a href="#B站智能搜索" class="headerlink" title="B站智能搜索"></a>B站智能搜索</h3><p><a href="javascript:value=prompt('哔哩哔哩智能搜索 - CKylinMyBLOG\n\n支持的内容：\nAV号/ANIME号/EP号/UID号/LIVE号/视频关键词\n\n输入你想搜索或跳转的位置：','','AV号/ANIME号/EP号/UID号/视频关键词');key=value.toLowerCase();baselink='https://www.bilibili.com/';baselive='https://live.bilibili.com/';basesearch='https://search.bilibili.com/';basespace='https://space.bilibili.com/';basebangumi='https://bangumi.bilibili.com/';url=&quot;javascript:alert('关键词为空或出现错误！');close()&quot;;cated=false;if(value.length===0||value==&quot; &quot;){cated=true}if(key.indexOf(&quot;av&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;av&quot;+value.replace(&quot;av&quot;,&quot;&quot;).replace(&quot;AV&quot;,&quot;&quot;)}if(key.indexOf(&quot;anime&quot;)===0&amp;&amp;key.length>5){cated=true;url=basebangumi+&quot;anime/&quot;+value.replace(&quot;anime&quot;,&quot;&quot;).replace(&quot;ANIME&quot;,&quot;&quot;)}if(key.indexOf(&quot;ep&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;bangumi/play/ep&quot;+value.replace(&quot;ep&quot;,&quot;&quot;).replace(&quot;EP&quot;,&quot;&quot;)}if(key.indexOf(&quot;uid&quot;)===0&amp;&amp;key.length>4){cated=true;url=basespace+value.replace(&quot;uid:&quot;,&quot;&quot;).replace(&quot;uid&quot;,&quot;&quot;).replace(&quot;UID:&quot;,&quot;&quot;).replace(&quot;UID&quot;,&quot;&quot;)}if(key.indexOf(&quot;live&quot;)===0&amp;&amp;key.length>4){cated=true;url=baselive+value.replace(&quot;live&quot;,&quot;&quot;).replace(&quot;LIVE&quot;,&quot;&quot;)}if(!cated){url=basesearch+&quot;all?keyword=&quot;+value}open(url);" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">哔哩哔哩智能搜索</a>（拖动到书签栏，点击书签栏中的此链接，输入AV号/ANIME号/EP号/UID号/视频关键词直达）</p><p><strong>哔哩哔哩智能搜索已经升级为Chrome扩展，书签版本不再维护更新！</strong></p><p><a href="/tags/哔哩哔哩智能搜索/">传送门&gt;&gt;&gt;</a></p><h3 id="特殊跳转链接"><a href="#特殊跳转链接" class="headerlink" title="特殊跳转链接"></a>特殊跳转链接</h3><p><a href="javascript:(function(){let a=prompt('输入特殊协议链接：','','');if(a) open(a);else console.error('空链接 '+a)})()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">特殊跳转链接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）</p><blockquote><p>此书签用于测试。比如一些特殊协议的app链接”ms-settings”之类的。</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -162,11 +192,11 @@
       <category term="小作品" scheme="http://www.ckylin-mc.cn/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/%E5%B0%8F%E4%BD%9C%E5%93%81/"/>
     
     
+      <category term="javascript" scheme="http://www.ckylin-mc.cn/tags/javascript/"/>
+    
       <category term="喜马拉雅" scheme="http://www.ckylin-mc.cn/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/"/>
     
       <category term="php" scheme="http://www.ckylin-mc.cn/tags/php/"/>
-    
-      <category term="javascript" scheme="http://www.ckylin-mc.cn/tags/javascript/"/>
     
       <category term="kymd" scheme="http://www.ckylin-mc.cn/tags/kymd/"/>
     
