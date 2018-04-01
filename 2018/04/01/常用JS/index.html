@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="CKylinMyBlog">
 <meta property="og:description" content="最近鼓捣FusionApp，帮别人鼓捣网页js，把常用的js在这里做一下记录。想起来什么写什么，可能不准确。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T13:35:10.832Z">
+<meta property="og:updated_time" content="2018-04-01T13:52:45.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用JS">
 <meta name="twitter:description" content="最近鼓捣FusionApp，帮别人鼓捣网页js，把常用的js在这里做一下记录。想起来什么写什么，可能不准确。">
@@ -367,7 +367,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T21:35:10+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T21:52:45+08:00">
                 2018-04-01
               </time>
             
@@ -434,7 +434,11 @@
 <h4 id="通过ID选择元素，仅会选择页面中的1个元素。"><a href="#通过ID选择元素，仅会选择页面中的1个元素。" class="headerlink" title="通过ID选择元素，仅会选择页面中的1个元素。"></a>通过ID选择元素，仅会选择页面中的1个元素。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"元素ID"</span>)</div></pre></td></tr></table></figure>
 <h4 id="通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"><a href="#通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）" class="headerlink" title="通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"></a>通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">"class名"</span>)[index]</div></pre></td></tr></table></figure>
 <h4 id="通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"><a href="#通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）" class="headerlink" title="通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"></a>通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"标签名"</span>)[index]</div></pre></td></tr></table></figure>
-<h4 id="通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数"><a href="#通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数" class="headerlink" title="通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数"></a>通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数</h4><p>标签名：直接写标签名<br>class名：.class名<br>ID：#id<br>使用时可以三项结合。另外特殊属性可以在上述元素后加[属性名]或[属性名=属性值]方法选择<br>兼容css语法如：空格” “，”&gt;”，逗号”,”，具体含义请百度<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"选择器"</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数"><a href="#通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数" class="headerlink" title="通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数"></a>通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数</h4><p>标签名：直接写标签名<br>class名：.class名<br>ID：#id<br>使用时可以三项结合。另外特殊属性可以在上述元素后加[属性名]或[属性名=属性值]方法选择<br>兼容css语法如：空格” “，”&gt;”，逗号”,”，具体含义请百度</p>
+<blockquote>
+<p><strong>CSS选择器参考网址: <a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="external">CSS选择器参考手册&gt;&gt;</a></strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"选择器"</span>)</div></pre></td></tr></table></figure>
 <h4 id="通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。"><a href="#通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。" class="headerlink" title="通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。"></a>通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">"选择器"</span>)</div></pre></td></tr></table></figure>
 <h3 id="子选择器："><a href="#子选择器：" class="headerlink" title="子选择器："></a>子选择器：</h3><p>以下字符需要拼接在上面选择器的后面组成js语句。</p>
 <h4 id="查找所有子节点，通过index选择第几个（0开始）-注意，此项返回的时候包含非元素项目"><a href="#查找所有子节点，通过index选择第几个（0开始）-注意，此项返回的时候包含非元素项目" class="headerlink" title="查找所有子节点，通过index选择第几个（0开始）[注意，此项返回的时候包含非元素项目]"></a>查找所有子节点，通过index选择第几个（0开始）[注意，此项返回的时候包含非元素项目]</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.childNodes[index]</div></pre></td></tr></table></figure>
