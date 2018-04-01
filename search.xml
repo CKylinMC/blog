@@ -3,6 +3,69 @@
   
     
     <entry>
+      <title><![CDATA[常用JS]]></title>
+      <url>/2018/04/01/%E5%B8%B8%E7%94%A8JS/</url>
+      <content type="html"><![CDATA[<p>最近鼓捣FusionApp，帮别人鼓捣网页js，把常用的js在这里做一下记录。想起来什么写什么，可能不准确。<br><a id="more"></a></p>
+<p><em>总结的是原生JS，通用于各个网站</em></p>
+<h2 id="获取元素："><a href="#获取元素：" class="headerlink" title="获取元素："></a>获取元素：</h2><p>以下语句从头开始或从上一个语句的”;”后开始，index值为整数值。</p>
+<h4 id="通过ID选择元素，仅会选择页面中的1个元素。"><a href="#通过ID选择元素，仅会选择页面中的1个元素。" class="headerlink" title="通过ID选择元素，仅会选择页面中的1个元素。"></a>通过ID选择元素，仅会选择页面中的1个元素。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"元素ID"</span>)</div></pre></td></tr></table></figure>
+<h4 id="通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"><a href="#通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）" class="headerlink" title="通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"></a>通过class选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">"class名"</span>)[index]</div></pre></td></tr></table></figure>
+<h4 id="通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"><a href="#通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）" class="headerlink" title="通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）"></a>通过标签名选择元素，选择时返回全部符合条件的元素，通过index选择第几个（0开始）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"标签名"</span>)[index]</div></pre></td></tr></table></figure>
+<h4 id="通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数"><a href="#通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数" class="headerlink" title="通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数"></a>通过css的选择器选择元素，返回第一个符合条件的元素，选择时可以综合各种参数</h4><p>标签名：直接写标签名<br>class名：.class名<br>ID：#id<br>使用时可以三项结合。另外特殊属性可以在上述元素后加[属性名]或[属性名=属性值]方法选择<br>兼容css语法如：空格” “，”&gt;”，逗号”,”，具体含义请百度<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"选择器"</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。"><a href="#通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。" class="headerlink" title="通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。"></a>通过css的选择器选择元素，使用方法与上面完全相同，但返回全部符合条件元素。使用index选择第几个。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">"选择器"</span>)</div></pre></td></tr></table></figure>
+<h3 id="子选择器："><a href="#子选择器：" class="headerlink" title="子选择器："></a>子选择器：</h3><p>以下字符需要拼接在上面选择器的后面组成js语句。</p>
+<h4 id="查找所有子节点，通过index选择第几个（0开始）-注意，此项返回的时候包含非元素项目"><a href="#查找所有子节点，通过index选择第几个（0开始）-注意，此项返回的时候包含非元素项目" class="headerlink" title="查找所有子节点，通过index选择第几个（0开始）[注意，此项返回的时候包含非元素项目]"></a>查找所有子节点，通过index选择第几个（0开始）[注意，此项返回的时候包含非元素项目]</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.childNodes[index]</div></pre></td></tr></table></figure>
+<h4 id="返回首个子节点-可能不是元素"><a href="#返回首个子节点-可能不是元素" class="headerlink" title="返回首个子节点(可能不是元素)"></a>返回首个子节点(可能不是元素)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.firstChild</div></pre></td></tr></table></figure>
+<h4 id="返回最后一个子节点-可能不是元素"><a href="#返回最后一个子节点-可能不是元素" class="headerlink" title="返回最后一个子节点(可能不是元素)"></a>返回最后一个子节点(可能不是元素)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.lastChild</div></pre></td></tr></table></figure>
+<h4 id="返回首个子元素节点"><a href="#返回首个子元素节点" class="headerlink" title="返回首个子元素节点"></a>返回首个子元素节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.firstElementChild</div></pre></td></tr></table></figure>
+<h4 id="返回最后一个子元素节点"><a href="#返回最后一个子元素节点" class="headerlink" title="返回最后一个子元素节点"></a>返回最后一个子元素节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.lastElementChild</div></pre></td></tr></table></figure>
+<h4 id="返回当前节点的下一个节点（可能不是元素）"><a href="#返回当前节点的下一个节点（可能不是元素）" class="headerlink" title="返回当前节点的下一个节点（可能不是元素）"></a>返回当前节点的下一个节点（可能不是元素）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.nextSibling</div></pre></td></tr></table></figure>
+<h4 id="返回当前节点的上一个节点（可能不是元素）"><a href="#返回当前节点的上一个节点（可能不是元素）" class="headerlink" title="返回当前节点的上一个节点（可能不是元素）"></a>返回当前节点的上一个节点（可能不是元素）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.previousSibling</div></pre></td></tr></table></figure>
+<h4 id="返回当前节点的下一个元素节点"><a href="#返回当前节点的下一个元素节点" class="headerlink" title="返回当前节点的下一个元素节点"></a>返回当前节点的下一个元素节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.nextElementSibling</div></pre></td></tr></table></figure>
+<h4 id="返回当前节点的上一个元素节点"><a href="#返回当前节点的上一个元素节点" class="headerlink" title="返回当前节点的上一个元素节点"></a>返回当前节点的上一个元素节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.previousElementSibling</div></pre></td></tr></table></figure>
+<h2 id="常用操作："><a href="#常用操作：" class="headerlink" title="常用操作："></a>常用操作：</h2><p>以下字符需要写在上面选择字符的后面拼合js语句。</p>
+<h3 id="dom操作："><a href="#dom操作：" class="headerlink" title="dom操作："></a>dom操作：</h3><p>此类操作会修改dom，请不要再循环中直接使用。</p>
+<h4 id="删除："><a href="#删除：" class="headerlink" title="删除："></a>删除：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.remove();</div></pre></td></tr></table></figure>
+<h3 id="class操作："><a href="#class操作：" class="headerlink" title="class操作："></a>class操作：</h3><p>偶尔有些时候删除特殊的类名就可以让多余的设置消失。</p>
+<h4 id="获得class（字符串，空格分割）"><a href="#获得class（字符串，空格分割）" class="headerlink" title="获得class（字符串，空格分割）"></a>获得class（字符串，空格分割）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.className</div></pre></td></tr></table></figure>
+<h4 id="获得class（数组）"><a href="#获得class（数组）" class="headerlink" title="获得class（数组）"></a>获得class（数组）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.classList</div></pre></td></tr></table></figure>
+<h4 id="清空class"><a href="#清空class" class="headerlink" title="清空class"></a>清空class</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.className=<span class="string">""</span>;</div></pre></td></tr></table></figure>
+<h4 id="指定固定class"><a href="#指定固定class" class="headerlink" title="指定固定class"></a>指定固定class</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.className=<span class="string">"指定class，空格分割"</span>;</div></pre></td></tr></table></figure>
+<h4 id="删除特定class："><a href="#删除特定class：" class="headerlink" title="删除特定class："></a>删除特定class：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.classList.remove(<span class="string">"类名"</span>);</div></pre></td></tr></table></figure>
+<h4 id="添加特定class："><a href="#添加特定class：" class="headerlink" title="添加特定class："></a>添加特定class：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.classList.add(<span class="string">"类名"</span>);</div></pre></td></tr></table></figure>
+<h3 id="样式操作："><a href="#样式操作：" class="headerlink" title="样式操作："></a>样式操作：</h3><p>此类操作可以在属性值后加”!important”提高属性值的优先级。</p>
+<h4 id="隐藏："><a href="#隐藏：" class="headerlink" title="隐藏："></a>隐藏：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.display=<span class="string">"none"</span>;</div></pre></td></tr></table></figure>
+<h4 id="透明："><a href="#透明：" class="headerlink" title="透明："></a>透明：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.opacity=<span class="string">"0"</span>;</div></pre></td></tr></table></figure>
+<h4 id="扔出屏幕："><a href="#扔出屏幕：" class="headerlink" title="扔出屏幕："></a>扔出屏幕：</h4><p>此步骤需要分两步。下面两行每行都需要组合一次选择元素的语句。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.style.position=<span class="string">"fixed"</span>;</div><div class="line">.style.left=<span class="string">"-1000px"</span>;</div></pre></td></tr></table></figure></p>
+<h4 id="删除内部留白："><a href="#删除内部留白：" class="headerlink" title="删除内部留白："></a>删除内部留白：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.style.padding=<span class="string">"0"</span>;</div><div class="line">但是大部分情况下只需要调整一侧的留白：</div><div class="line">上：</div><div class="line"><span class="string">``</span><span class="string">`js</span></div><div class="line"><span class="string">.style.paddingTop="0";</span></div></pre></td></tr></table></figure>
+<p>下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.paddingBottom=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
+<p>左<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.paddingLeft=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
+<p>右：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.paddingRight=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
+<h4 id="删除外部留白："><a href="#删除外部留白：" class="headerlink" title="删除外部留白："></a>删除外部留白：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.margin=<span class="string">"0"</span>;</div></pre></td></tr></table></figure>
+<p>但是大部分情况下只需要调整一侧的留白：<br>上：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.marginTop=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
+<p>下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.marginBottom=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
+<p>左:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.marginLeft=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
+<p>右：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.marginRight=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 编程开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> fusionapp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[[Chrome扩展] 哔哩哔哩智能搜索 v1.2 更新]]></title>
       <url>/2018/03/04/Chrome%E6%89%A9%E5%B1%95-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E6%99%BA%E8%83%BD%E6%90%9C%E7%B4%A2-v1-2-%E6%9B%B4%E6%96%B0/</url>
       <content type="html"><![CDATA[<p>哔哩哔哩智能搜索更新至1.2版本，新增常用b站链接功能</p>
@@ -350,18 +413,6 @@
   
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<h3 id="想了好久，还是用Hexo了啊…"><a href="#想了好久，还是用Hexo了啊…" class="headerlink" title="想了好久，还是用Hexo了啊…"></a>想了好久，还是用Hexo了啊…</h3><p>一开始是懒，真的懒，想找个托管博客程序但是访问慢，手里的域名也会浪费，后来用静态网站，确定在GH Pages搭建以后看到了 hubpress.io ，好像不错，就部署起来。<a id="more"></a><br>这个倒是提供了后台页面可以直接的编辑，但是</p>
@@ -380,6 +431,18 @@
 </p>
 <p>2017年9月16日<br>CKylinMC</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
