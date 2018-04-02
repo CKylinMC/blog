@@ -120,7 +120,7 @@
 <p>左:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.marginLeft=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
 <p>右：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.style.marginRight=<span class="string">"0"</span>;</div></pre></td></tr></table></figure></p>
 <h2 id="示范"><a href="#示范" class="headerlink" title="示范"></a>示范</h2><p>删除一个id为<code>abc</code>的元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"abc"</span>).remove();</div></pre></td></tr></table></figure></p>
-<p>隐藏一个属性<code>dpr</code>为<code>1</code>的<code>ul</code>元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"ul.[dpr=1]"</span>).style.display=<span class="string">"none"</span>;</div></pre></td></tr></table></figure></p>
+<p>隐藏一个属性<code>dpr</code>为<code>1</code>的<code>ul</code>元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.querySelector(<span class="string">"ul[dpr=1]"</span>).style.display=<span class="string">"none"</span>;</div></pre></td></tr></table></figure></p>
 ]]></content>
       
         <categories>
@@ -362,9 +362,9 @@
         
         <tags>
             
-            <tag> 喜马拉雅 </tag>
-            
             <tag> php </tag>
+            
+            <tag> 喜马拉雅 </tag>
             
         </tags>
         
@@ -450,9 +450,9 @@
             
             <tag> javascript </tag>
             
-            <tag> 喜马拉雅 </tag>
-            
             <tag> php </tag>
+            
+            <tag> 喜马拉雅 </tag>
             
             <tag> kymd </tag>
             
@@ -488,6 +488,12 @@
   
     
     <entry>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<h3 id="想了好久，还是用Hexo了啊…"><a href="#想了好久，还是用Hexo了啊…" class="headerlink" title="想了好久，还是用Hexo了啊…"></a>想了好久，还是用Hexo了啊…</h3><p>一开始是懒，真的懒，想找个托管博客程序但是访问慢，手里的域名也会浪费，后来用静态网站，确定在GH Pages搭建以后看到了 hubpress.io ，好像不错，就部署起来。<a id="more"></a><br>这个倒是提供了后台页面可以直接的编辑，但是</p>
@@ -506,12 +512,6 @@
 </p>
 <p>2017年9月16日<br>CKylinMC</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
     </entry>
     
     <entry>
