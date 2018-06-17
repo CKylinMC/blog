@@ -362,9 +362,9 @@
         
         <tags>
             
-            <tag> 喜马拉雅 </tag>
-            
             <tag> php </tag>
+            
+            <tag> 喜马拉雅 </tag>
             
         </tags>
         
@@ -450,9 +450,9 @@
             
             <tag> javascript </tag>
             
-            <tag> 喜马拉雅 </tag>
-            
             <tag> php </tag>
+            
+            <tag> 喜马拉雅 </tag>
             
             <tag> kymd </tag>
             
@@ -509,14 +509,14 @@
     </entry>
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/tags/index.html</url>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
+      <title><![CDATA[标签]]></title>
+      <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
