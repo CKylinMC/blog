@@ -362,9 +362,9 @@
         
         <tags>
             
-            <tag> php </tag>
-            
             <tag> 喜马拉雅 </tag>
+            
+            <tag> php </tag>
             
         </tags>
         
@@ -383,6 +383,11 @@
 <h3 id="特殊跳转链接"><a href="#特殊跳转链接" class="headerlink" title="特殊跳转链接"></a>特殊跳转链接</h3><p><a href="javascript:(function(){let a=prompt('输入特殊协议链接：','','');if(a) open(a);else console.error('空链接 '+a)})()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">特殊跳转链接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）</p>
 <blockquote>
 <p>此书签用于测试。比如一些特殊协议的app链接”ms-settings”之类的。</p>
+</blockquote>
+<h3 id="获取B站视频AV号"><a href="#获取B站视频AV号" class="headerlink" title="获取B站视频AV号"></a>获取B站视频AV号</h3><p><a href="javascript:var aid;if(aid)prompt('AID:','av'+aid);else alert('NO AID');" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">获取AV号</a>（拖动到书签栏，点击书签栏中的此链接，即可获取av号）</p>
+<p><a href="javascript:var aid;if(aid)prompt('AID:','https://www.bilibili.com/video/av'+aid);else alert('NO AID');" onclick="alert('拖动到书签栏哦')" target="_blank" rel="external">获取AV号格式链接</a>（拖动到书签栏，点击书签栏中的此链接，即可获取av号格式链接）</p>
+<blockquote>
+<p>链接甚至可以获取番剧的视频AV号！</p>
 </blockquote>
 ]]></content>
       
@@ -450,9 +455,9 @@
             
             <tag> javascript </tag>
             
-            <tag> php </tag>
-            
             <tag> 喜马拉雅 </tag>
+            
+            <tag> php </tag>
             
             <tag> kymd </tag>
             
