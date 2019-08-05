@@ -493,12 +493,6 @@
   
     
     <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<h3 id="想了好久，还是用Hexo了啊…"><a href="#想了好久，还是用Hexo了啊…" class="headerlink" title="想了好久，还是用Hexo了啊…"></a>想了好久，还是用Hexo了啊…</h3><p>一开始是懒，真的懒，想找个托管博客程序但是访问慢，手里的域名也会浪费，后来用静态网站，确定在GH Pages搭建以后看到了 hubpress.io ，好像不错，就部署起来。<a id="more"></a><br>这个倒是提供了后台页面可以直接的编辑，但是</p>
@@ -517,6 +511,12 @@
 </p>
 <p>2017年9月16日<br>CKylinMC</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
