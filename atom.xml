@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ckylin-mc.cn/"/>
-  <updated>2019-08-26T10:26:26.189Z</updated>
+  <updated>2019-08-26T10:28:46.414Z</updated>
   <id>http://www.ckylin-mc.cn/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>记一次WMI出错的修复</title>
-    <link href="http://www.ckylin-mc.cn/2019/08/26/%E8%AE%B0%E4%B8%80%E6%AC%A1WMI%E5%87%BA%E9%94%99%E7%9A%84%E4%BF%AE%E5%A4%8D/"/>
-    <id>http://www.ckylin-mc.cn/2019/08/26/记一次WMI出错的修复/</id>
+    <link href="http://www.ckylin-mc.cn/2019/08/26/fix-wmi-error/"/>
+    <id>http://www.ckylin-mc.cn/2019/08/26/fix-wmi-error/</id>
     <published>2019-08-26T09:57:00.000Z</published>
-    <updated>2019-08-26T10:26:26.189Z</updated>
+    <updated>2019-08-26T10:28:46.414Z</updated>
     
     <content type="html"><![CDATA[<p>总有奇奇怪怪的软件像谋害我的电脑。<br><a id="more"></a></p><p>今天一大早帮朋友下载一个油管上的视频。我想起来我之前旧电脑上有用过一个叫 <em>YouTube Downloader</em> 的软件，而我恰好留了一个安装包。</p><p><img src="https://bucket1-1251630806.cos.ap-beijing-1.myqcloud.com/blog/wmifix_1_searchu2b.png" alt="Youtube Downloader Setup"></p><p>于是我就开始用这个安装包安装一下，毕竟以前一直用这个软件没出过问题。</p><p>安装的时候我发现这不能算是安装包，只能算是个下载器，联网下载了个22MB的安装程序，我没管。</p><p>火绒这时候拦截了个病毒，但是类别是代码混淆器。我想着这没准是误拦什么的，毕竟以前也没出过问题，就放行了。</p><p>软件安装完界面和功能还是和以前一样，于是我像以前一样，粘贴URL，下载，完成。<strong>这时候，开始出现问题了。</strong></p><p>整个屏幕上面大概五分之一的空间被霸占，上面是一个浏览器的头部，左边甚至还能选择浏览器。显示是一个Chormium内核的浏览器，叫WebDiscover。</p><p>如果要是真的是个简单的浏览器也就算了，<strong>问题是它占着我五分之一的屏幕，连桌面图标都推下来了，任何的窗口都不能覆盖其上也不会被遮挡，而是就像任务栏一样被完全隔离。</strong>我去任务管理器，发现<strong>这货居然杀了进程还会自启。</strong>无奈，我找到了这个程序所在目录，用火绒直接文件粉碎了，顺便把万恶之源，那个油管下载器卸载了。重启了一遍电脑，看上去似乎就恢复了。</p><p>我以为事情就到此为止了。但是当我回来把电脑从睡眠状态中唤醒的时候，开始出现了新的问题：</p><ol><li>chrome开始不能启动了，报了一些错误就闪退，点图标都不能打开。</li><li>MSI的备份提醒（Reminder）每次启动的时候都要报一个WMI无效类错误。</li><li>tasklist、taskkill等命令全部报无效类错误，wmic命令也彻底报废。</li></ol><p>命令出错是我后来操作别的时候发现的，wmic是我想到的和WMI最有关的指令。随后还出现了一些驱动上的问题：</p><ol><li>耳麦有时候没有声音了。</li><li>开始界面（全屏）第一行的磁块被挤下来和下面重叠，空出了大概是之前WebDiscover浏览器头的高度。</li><li>显卡驱动崩溃过一次。</li></ol><p>重启可以临时解决一些问题，但是WMI报错一直存在，而且很多问题很快又出现了。我怀疑是系统文件损坏了。</p><p>百度搜索无果，去谷歌查询，大部分都是XP遇到的，最终找到一个网页：<a href="https://www.wandouip.com/t5i312564/" target="_blank" rel="noopener">https://www.wandouip.com/t5i312564/</a></p><p>他们提供了一个方法：</p><p><img src="https://bucket1-1251630806.cos.ap-beijing-1.myqcloud.com/blog/wmifix_2_web.png" alt="解决方法"></p><p>先停掉winmgmt服务，然后重命名或者删除C:\Windows\System32\wbem\Repository文件夹，最后再启动服务，执行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">winmgmt /resetRepository</span><br></pre></td></tr></table></figure><p>最后重启电脑。最终问题解决，没有再出现任何WMI报错，而且命令也已经恢复正常。</p>]]></content>
     

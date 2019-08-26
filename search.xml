@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[记一次WMI出错的修复]]></title>
-      <url>/2019/08/26/%E8%AE%B0%E4%B8%80%E6%AC%A1WMI%E5%87%BA%E9%94%99%E7%9A%84%E4%BF%AE%E5%A4%8D/</url>
+      <url>/2019/08/26/fix-wmi-error/</url>
       <content type="html"><![CDATA[<p>总有奇奇怪怪的软件像谋害我的电脑。<br><a id="more"></a></p>
 <p>今天一大早帮朋友下载一个油管上的视频。我想起来我之前旧电脑上有用过一个叫 <em>YouTube Downloader</em> 的软件，而我恰好留了一个安装包。</p>
 <p><img src="https://bucket1-1251630806.cos.ap-beijing-1.myqcloud.com/blog/wmifix_1_searchu2b.png" alt="Youtube Downloader Setup"></p>
@@ -702,18 +702,6 @@
   
     
     <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<h3 id="想了好久，还是用Hexo了啊…"><a href="#想了好久，还是用Hexo了啊…" class="headerlink" title="想了好久，还是用Hexo了啊…"></a>想了好久，还是用Hexo了啊…</h3><p>一开始是懒，真的懒，想找个托管博客程序但是访问慢，手里的域名也会浪费，后来用静态网站，确定在GH Pages搭建以后看到了 hubpress.io ，好像不错，就部署起来。<a id="more"></a><br>这个倒是提供了后台页面可以直接的编辑，但是</p>
@@ -732,6 +720,18 @@
 </p>
 <p>2017年9月16日<br>CKylinMC</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
