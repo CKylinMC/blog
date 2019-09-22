@@ -59,18 +59,19 @@
   };
 </script>
 
-  <meta name="description" content="CKylinMC 的个人博客">
+  <meta name="description" content="本地磁盘小日记  Ratizux  JYD">
 <meta property="og:type" content="website">
-<meta property="og:title" content="CKylinMyBlog">
-<meta property="og:url" content="http://www.ckylin-mc.cn/archives/2018/01/index.html">
+<meta property="og:title" content="友链">
+<meta property="og:url" content="http://www.ckylin-mc.cn/flinks/index.html">
 <meta property="og:site_name" content="CKylinMyBlog">
-<meta property="og:description" content="CKylinMC 的个人博客">
+<meta property="og:description" content="本地磁盘小日记  Ratizux  JYD">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-22T07:59:33.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CKylinMyBlog">
-<meta name="twitter:description" content="CKylinMC 的个人博客">
+<meta name="twitter:title" content="友链">
+<meta name="twitter:description" content="本地磁盘小日记  Ratizux  JYD">
   <link rel="alternate" href="/atom.xml" title="CKylinMyBlog" type="application/atom+xml">
-  <link rel="canonical" href="http://www.ckylin-mc.cn/archives/2018/01/">
+  <link rel="canonical" href="http://www.ckylin-mc.cn/flinks/">
 
 
 <script id="page-configurations">
@@ -79,12 +80,12 @@
     sidebar: "",
     isHome: false,
     isPost: false,
-    isPage: false,
-    isArchive: true
+    isPage: true,
+    isArchive: false
   };
 </script>
 
-  <title>归档 | CKylinMyBlog</title>
+  <title>友链 | CKylinMyBlog</title>
   
 
 
@@ -299,78 +300,62 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-archive">
+          <div id="content" class="content page-post-detail">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-  
-  
-  
-
-  
+  <div id="posts" class="posts-expand">
     
-    <div class="collection-title">
-      <h2 class="archive-year" id="archive-year-2018">2018</h2>
-    </div>
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h2 class="post-title" itemprop="name headline">友链
+
+</h2>
+
+<div class="post-meta">
   
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+</div>
 
-      <h3 class="post-title">
+</header>
+
+      
+      
+      
+      <div class="post-body">
         
-          <a class="post-title-link" href="/2018/01/09/书签更新-哔哩哔哩智能搜索/" itemprop="url">
-            
-              <span itemprop="name">[书签更新] 哔哩哔哩智能搜索</span>
-            
-          </a>
-        
-      </h3>
+          <a id="more"></a>
+<ul>
+<li><p><a href=".">本地磁盘小日记</a></p>
+</li>
+<li><p><a href="http://ratizux.github.io" target="_blank" rel="noopener">Ratizux</a></p>
+</li>
+<li><p><a href="http://jyd.ckylin.site" target="_blank" rel="noopener">JYD</a></p>
+</li>
+</ul>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-09T20:26:00+08:00"
-              content="2018-01-09">
-          01-09
-        </time>
+        
       </div>
-
-    </header>
-  </article>
-
-
-
-
+      
+      
+      
     </div>
+    
+
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
 
         </div>
           
@@ -673,31 +658,35 @@
   
     
   
-    
-      
-    
-  
-    <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-    <script>
-      
-        window.addEventListener('load', () => {
-      
-        quicklink({
-          timeout: 3000,
-          priority: true,
-          ignores: [uri => uri.includes('#'),uri => uri == 'http://www.ckylin-mc.cn/archives/2018/01/',]
-        });
-      
-        });
-      
-    </script>
-  
 
   
 
 
   
+    <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+  
+
     
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+    var gitalk = new Gitalk({
+      clientID: '93f0ebce95c3b0c8ca84',
+      clientSecret: '20c4d9fd15adffd38846c91e2486f67f45f947f6',
+      repo: 'blog_comments',
+      owner: 'Cansll',
+      admin: ['Cansll'],
+      id: '47b3436b1ace6a83b2c9596134b123c7',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
     </div>
     <script>

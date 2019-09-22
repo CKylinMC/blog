@@ -811,5 +811,20 @@
 ]]></content>
     </entry>
     
+    <entry>
+      <title><![CDATA[友链]]></title>
+      <url>/flinks/index.html</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<ul>
+<li><p><a href=".">本地磁盘小日记</a></p>
+</li>
+<li><p><a href="http://ratizux.github.io" target="_blank" rel="noopener">Ratizux</a></p>
+</li>
+<li><p><a href="http://jyd.ckylin.site" target="_blank" rel="noopener">JYD</a></p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
   
 </search>
