@@ -3,6 +3,67 @@
   
     
     <entry>
+      <title><![CDATA[Java架构师培训 - 预科 - 笔记 01]]></title>
+      <url>/2020/01/14/Java%E6%9E%B6%E6%9E%84%E5%B8%88%E5%9F%B9%E8%AE%AD%20-%20%E9%A2%84%E7%A7%91%20-%20%E7%AC%94%E8%AE%B0%2001/</url>
+      <content type="html"><![CDATA[<p>Java架构师培训 - 预科 - 笔记 01<br><a id="more"></a></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型列表"><a href="#数据类型列表" class="headerlink" title="数据类型列表"></a>数据类型列表</h3><ul>
+<li>基本数据类型（8）<ul>
+<li><strong>整数型</strong><ul>
+<li><code>byte</code> =&gt; 1 byte</li>
+<li><code>short</code> =&gt; 2 byte</li>
+<li><code>int</code> =&gt; 4 byte <sub><em>默认整数型</em></sub></li>
+<li><code>long</code> =&gt; 8 byte</li>
+</ul>
+</li>
+<li><strong>浮点型</strong><ul>
+<li><code>float</code> =&gt; 4 byte</li>
+<li><code>double</code> =&gt; 8 byte <sub><em>默认浮点型</em></sub></li>
+</ul>
+</li>
+<li><strong>字符型</strong><ul>
+<li><code>char</code> =&gt; 2 byte</li>
+</ul>
+</li>
+<li><strong>布尔型</strong><ul>
+<li><code>boolean</code> =&gt; 1 byte</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>引用数据类型<ul>
+<li>数组</li>
+<li>类</li>
+<li>接口</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h3 id="类型转换规则"><a href="#类型转换规则" class="headerlink" title="类型转换规则"></a>类型转换规则</h3><ul>
+<li>空间占用小的类型可以向空间占用大的类型转换。</li>
+<li>空间占用大的类型向空间占用小的类型转换时不能保证数据精度。</li>
+<li>布尔值不能与任何类型转换。</li>
+<li>字符型与数值型转换时将参考ASCII编码表。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 编程开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 培训笔记 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在VSCode中配置C/CPP环境]]></title>
       <url>/2019/09/04/configure-c-env-in-vscode/</url>
       <content type="html"><![CDATA[<p>在课上教学用的是DevC++的环境学习C语言，但是在自己的电脑上我想使用VS Code来进行代码的编写和编译。不过配置环境没有那么简单，一边在网上搜一边实际测试还是花了我好久的，这里记录一下方法。<br><a id="more"></a></p>
