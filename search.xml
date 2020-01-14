@@ -6,18 +6,33 @@
       <title><![CDATA[Java架构师培训 - 预科 - 笔记 01]]></title>
       <url>/2020/01/14/Java%E6%9E%B6%E6%9E%84%E5%B8%88%E5%9F%B9%E8%AE%AD%20-%20%E9%A2%84%E7%A7%91%20-%20%E7%AC%94%E8%AE%B0%2001/</url>
       <content type="html"><![CDATA[<p>Java架构师培训 - 预科 - 笔记 01<br><a id="more"></a></p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>变量名只允许数字、字幕、 <code>_</code>、<code>$</code>。</li>
+<li>数字不可以作为变量名起始字符。</li>
+<li>关键字不可以作为变量名。</li>
+<li>变量名区分大小写，但是不可以重复定义。</li>
+</ul>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型列表"><a href="#数据类型列表" class="headerlink" title="数据类型列表"></a>数据类型列表</h3><ul>
 <li>基本数据类型（8）<ul>
 <li><strong>整数型</strong><ul>
 <li><code>byte</code> =&gt; 1 byte</li>
 <li><code>short</code> =&gt; 2 byte</li>
 <li><code>int</code> =&gt; 4 byte <sub><em>默认整数型</em></sub></li>
-<li><code>long</code> =&gt; 8 byte</li>
+<li><code>long</code> =&gt; 8 byte<ul>
+<li>变量值后缀：<code>L</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>浮点型</strong><ul>
-<li><code>float</code> =&gt; 4 byte</li>
-<li><code>double</code> =&gt; 8 byte <sub><em>默认浮点型</em></sub></li>
+<li><code>float</code> =&gt; 4 byte<ul>
+<li>变量值后缀：<code>f</code></li>
+</ul>
+</li>
+<li><code>double</code> =&gt; 8 byte <sub><em>默认浮点型</em></sub><ul>
+<li>变量值后缀：<code>d</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>字符型</strong><ul>
@@ -840,18 +855,6 @@
   
     
     <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<h3 id="想了好久，还是用Hexo了啊…"><a href="#想了好久，还是用Hexo了啊…" class="headerlink" title="想了好久，还是用Hexo了啊…"></a>想了好久，还是用Hexo了啊…</h3><p>一开始是懒，真的懒，想找个托管博客程序但是访问慢，手里的域名也会浪费，后来用静态网站，确定在GH Pages搭建以后看到了 hubpress.io ，好像不错，就部署起来。<a id="more"></a><br>这个倒是提供了后台页面可以直接的编辑，但是</p>
@@ -873,6 +876,12 @@
     </entry>
     
     <entry>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[友链]]></title>
       <url>/flinks/index.html</url>
       <content type="html"><![CDATA[<a id="more"></a>
@@ -885,6 +894,12 @@
 </li>
 </ul>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[标签]]></title>
+      <url>/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   

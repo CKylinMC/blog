@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ckylin-mc.cn/"/>
-  <updated>2020-01-14T03:52:38.075Z</updated>
+  <updated>2020-01-14T04:19:07.712Z</updated>
   <id>http://www.ckylin-mc.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.ckylin-mc.cn/2020/01/14/Java%E6%9E%B6%E6%9E%84%E5%B8%88%E5%9F%B9%E8%AE%AD%20-%20%E9%A2%84%E7%A7%91%20-%20%E7%AC%94%E8%AE%B0%2001/"/>
     <id>http://www.ckylin-mc.cn/2020/01/14/Java架构师培训 - 预科 - 笔记 01/</id>
     <published>2020-01-14T03:23:00.000Z</published>
-    <updated>2020-01-14T03:52:38.075Z</updated>
+    <updated>2020-01-14T04:19:07.712Z</updated>
     
-    <content type="html"><![CDATA[<p>Java架构师培训 - 预科 - 笔记 01<br><a id="more"></a></p><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型列表"><a href="#数据类型列表" class="headerlink" title="数据类型列表"></a>数据类型列表</h3><ul><li>基本数据类型（8）<ul><li><strong>整数型</strong><ul><li><code>byte</code> =&gt; 1 byte</li><li><code>short</code> =&gt; 2 byte</li><li><code>int</code> =&gt; 4 byte <sub><em>默认整数型</em></sub></li><li><code>long</code> =&gt; 8 byte</li></ul></li><li><strong>浮点型</strong><ul><li><code>float</code> =&gt; 4 byte</li><li><code>double</code> =&gt; 8 byte <sub><em>默认浮点型</em></sub></li></ul></li><li><strong>字符型</strong><ul><li><code>char</code> =&gt; 2 byte</li></ul></li><li><strong>布尔型</strong><ul><li><code>boolean</code> =&gt; 1 byte</li></ul></li></ul></li><li>引用数据类型<ul><li>数组</li><li>类</li><li>接口</li><li>…</li></ul></li></ul><h3 id="类型转换规则"><a href="#类型转换规则" class="headerlink" title="类型转换规则"></a>类型转换规则</h3><ul><li>空间占用小的类型可以向空间占用大的类型转换。</li><li>空间占用大的类型向空间占用小的类型转换时不能保证数据精度。</li><li>布尔值不能与任何类型转换。</li><li>字符型与数值型转换时将参考ASCII编码表。</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>Java架构师培训 - 预科 - 笔记 01<br><a id="more"></a></p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul><li>变量名只允许数字、字幕、 <code>_</code>、<code>$</code>。</li><li>数字不可以作为变量名起始字符。</li><li>关键字不可以作为变量名。</li><li>变量名区分大小写，但是不可以重复定义。</li></ul><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型列表"><a href="#数据类型列表" class="headerlink" title="数据类型列表"></a>数据类型列表</h3><ul><li>基本数据类型（8）<ul><li><strong>整数型</strong><ul><li><code>byte</code> =&gt; 1 byte</li><li><code>short</code> =&gt; 2 byte</li><li><code>int</code> =&gt; 4 byte <sub><em>默认整数型</em></sub></li><li><code>long</code> =&gt; 8 byte<ul><li>变量值后缀：<code>L</code></li></ul></li></ul></li><li><strong>浮点型</strong><ul><li><code>float</code> =&gt; 4 byte<ul><li>变量值后缀：<code>f</code></li></ul></li><li><code>double</code> =&gt; 8 byte <sub><em>默认浮点型</em></sub><ul><li>变量值后缀：<code>d</code></li></ul></li></ul></li><li><strong>字符型</strong><ul><li><code>char</code> =&gt; 2 byte</li></ul></li><li><strong>布尔型</strong><ul><li><code>boolean</code> =&gt; 1 byte</li></ul></li></ul></li><li>引用数据类型<ul><li>数组</li><li>类</li><li>接口</li><li>…</li></ul></li></ul><h3 id="类型转换规则"><a href="#类型转换规则" class="headerlink" title="类型转换规则"></a>类型转换规则</h3><ul><li>空间占用小的类型可以向空间占用大的类型转换。</li><li>空间占用大的类型向空间占用小的类型转换时不能保证数据精度。</li><li>布尔值不能与任何类型转换。</li><li>字符型与数值型转换时将参考ASCII编码表。</li></ul>]]></content>
     
     <summary type="html">
     
