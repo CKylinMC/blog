@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.ckylin-mc.cn/"/>
-  <updated>2020-01-14T04:19:07.712Z</updated>
+  <updated>2020-01-15T04:18:27.315Z</updated>
   <id>http://www.ckylin-mc.cn/</id>
   
   <author>
@@ -17,17 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java架构师培训 - 预科 - 笔记 02</title>
+    <link href="http://www.ckylin-mc.cn/2020/01/15/Java%E6%9E%B6%E6%9E%84%E5%B8%88%E5%9F%B9%E8%AE%AD%20-%20%E9%A2%84%E7%A7%91%20-%20%E7%AC%94%E8%AE%B0%2002/"/>
+    <id>http://www.ckylin-mc.cn/2020/01/15/Java架构师培训 - 预科 - 笔记 02/</id>
+    <published>2020-01-15T02:44:31.799Z</published>
+    <updated>2020-01-15T04:18:27.315Z</updated>
+    
+    <content type="html"><![CDATA[<p>运算符、十进制与二进制转换<br><a id="more"></a></p><h2 id="运算符-14"><a href="#运算符-14" class="headerlink" title="运算符 (14)"></a>运算符 (14)</h2><ul><li>分割运算符<ul><li><code>(  )</code></li></ul></li><li>自增 / 自减<ul><li><code>i++</code> /  <code>++a</code></li><li><code>i--</code> / <code>--a</code></li></ul></li><li>算术<ul><li>乘、除、取余 <code>*</code> <code>/</code> <code>%</code><ul><li><font color="blue"><strong>除法结果的数据类型由被除数决定(前数)</strong></font></li></ul></li><li>加、减 <code>+</code> <code>-</code></li></ul></li><li>移位<ul><li><code>&gt;&gt;</code></li><li><code>&lt;&lt;</code></li><li><code>&gt;&gt;&gt;</code></li></ul></li><li>关系<ul><li>大小</li><li>相等</li></ul></li><li>按位<ul><li>与 <code>&amp;</code><ul><li>两项为1才为1</li></ul></li><li>异或 <code>^</code><ul><li>两项相同为0 不同为1</li></ul></li><li>或 <code>|</code><ul><li>有1为1，全0为0</li></ul></li></ul></li><li>逻辑<ul><li>与 <code>&amp;&amp;</code><ul><li>两真为真，有假为假</li></ul></li><li>或 <code>||</code><ul><li>有真为真，全假则假</li></ul></li></ul></li><li>条件<ul><li><code>xx ? xx : xx</code></li></ul></li><li>赋值<ul><li><code>=</code></li></ul></li></ul><h2 id="其他笔记"><a href="#其他笔记" class="headerlink" title="其他笔记"></a>其他笔记</h2><h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><ul><li>第一位为正负指示<ul><li>负数是需要取反，并+1</li></ul></li></ul><h3 id="十进制转换二进制算法"><a href="#十进制转换二进制算法" class="headerlink" title="十进制转换二进制算法"></a>十进制转换二进制算法</h3><ul><li>将十进制数字除以2，将余数依次从右到左排列，直到商为0。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;运算符、十进制与二进制转换&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程开发" scheme="http://www.ckylin-mc.cn/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="java" scheme="http://www.ckylin-mc.cn/tags/java/"/>
+    
+      <category term="培训笔记" scheme="http://www.ckylin-mc.cn/tags/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java架构师培训 - 预科 - 笔记 01</title>
     <link href="http://www.ckylin-mc.cn/2020/01/14/Java%E6%9E%B6%E6%9E%84%E5%B8%88%E5%9F%B9%E8%AE%AD%20-%20%E9%A2%84%E7%A7%91%20-%20%E7%AC%94%E8%AE%B0%2001/"/>
     <id>http://www.ckylin-mc.cn/2020/01/14/Java架构师培训 - 预科 - 笔记 01/</id>
     <published>2020-01-14T03:23:00.000Z</published>
-    <updated>2020-01-14T04:19:07.712Z</updated>
+    <updated>2020-01-15T03:42:44.840Z</updated>
     
-    <content type="html"><![CDATA[<p>Java架构师培训 - 预科 - 笔记 01<br><a id="more"></a></p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul><li>变量名只允许数字、字幕、 <code>_</code>、<code>$</code>。</li><li>数字不可以作为变量名起始字符。</li><li>关键字不可以作为变量名。</li><li>变量名区分大小写，但是不可以重复定义。</li></ul><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型列表"><a href="#数据类型列表" class="headerlink" title="数据类型列表"></a>数据类型列表</h3><ul><li>基本数据类型（8）<ul><li><strong>整数型</strong><ul><li><code>byte</code> =&gt; 1 byte</li><li><code>short</code> =&gt; 2 byte</li><li><code>int</code> =&gt; 4 byte <sub><em>默认整数型</em></sub></li><li><code>long</code> =&gt; 8 byte<ul><li>变量值后缀：<code>L</code></li></ul></li></ul></li><li><strong>浮点型</strong><ul><li><code>float</code> =&gt; 4 byte<ul><li>变量值后缀：<code>f</code></li></ul></li><li><code>double</code> =&gt; 8 byte <sub><em>默认浮点型</em></sub><ul><li>变量值后缀：<code>d</code></li></ul></li></ul></li><li><strong>字符型</strong><ul><li><code>char</code> =&gt; 2 byte</li></ul></li><li><strong>布尔型</strong><ul><li><code>boolean</code> =&gt; 1 byte</li></ul></li></ul></li><li>引用数据类型<ul><li>数组</li><li>类</li><li>接口</li><li>…</li></ul></li></ul><h3 id="类型转换规则"><a href="#类型转换规则" class="headerlink" title="类型转换规则"></a>类型转换规则</h3><ul><li>空间占用小的类型可以向空间占用大的类型转换。</li><li>空间占用大的类型向空间占用小的类型转换时不能保证数据精度。</li><li>布尔值不能与任何类型转换。</li><li>字符型与数值型转换时将参考ASCII编码表。</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>变量、数据类型、类型转换规则<br><a id="more"></a></p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul><li>变量名只允许数字、字幕、 <code>_</code>、<code>$</code>。</li><li>数字不可以作为变量名起始字符。</li><li>关键字不可以作为变量名。</li><li>变量名区分大小写，但是不可以重复定义。</li></ul><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型列表"><a href="#数据类型列表" class="headerlink" title="数据类型列表"></a>数据类型列表</h3><ul><li>基本数据类型（8）<ul><li><strong>整数型</strong><ul><li><code>byte</code> =&gt; 1 byte</li><li><code>short</code> =&gt; 2 byte</li><li><code>int</code> =&gt; 4 byte <sub><em>默认整数型</em></sub></li><li><code>long</code> =&gt; 8 byte<ul><li>变量值后缀：<code>L</code></li></ul></li></ul></li><li><strong>浮点型</strong><ul><li><code>float</code> =&gt; 4 byte<ul><li>变量值后缀：<code>f</code></li></ul></li><li><code>double</code> =&gt; 8 byte <sub><em>默认浮点型</em></sub><ul><li>变量值后缀：<code>d</code></li></ul></li></ul></li><li><strong>字符型</strong><ul><li><code>char</code> =&gt; 2 byte</li></ul></li><li><strong>布尔型</strong><ul><li><code>boolean</code> =&gt; 1 byte</li></ul></li></ul></li><li>引用数据类型<ul><li>数组</li><li>类</li><li>接口</li><li>…</li></ul></li></ul><h3 id="类型转换规则"><a href="#类型转换规则" class="headerlink" title="类型转换规则"></a>类型转换规则</h3><ul><li>空间占用小的类型可以向空间占用大的类型转换。</li><li>空间占用大的类型向空间占用小的类型转换时不能保证数据精度。</li><li>布尔值不能与任何类型转换。</li><li>字符型与数值型转换时将参考ASCII编码表。</li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Java架构师培训 - 预科 - 笔记 01&lt;br&gt;
+      &lt;p&gt;变量、数据类型、类型转换规则&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -51,7 +75,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;在课上教学用的是DevC++的环境学习C语言，但是在自己的电脑上我想使用VS Code来进行代码的编写和编译。不过配置环境没有那么简单，一边在网上搜一边实际测试还是花了我好久的，这里记录一下方法。&lt;br&gt;
+      &lt;p&gt;在课上教学用的是DevC++的环境学习C语言，但是在自己的电脑上我想使用VS Code来进行代码的编写和编译。不过配置环境没有那么简单，一边在网上搜一边实际测试还是花了我好久的，这里记录一下方法。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -85,7 +109,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;总有奇奇怪怪的软件像谋害我的电脑。&lt;br&gt;
+      &lt;p&gt;总有奇奇怪怪的软件像谋害我的电脑。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -107,7 +131,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;从七牛切到了腾讯。&lt;br&gt;
+      &lt;p&gt;从七牛切到了腾讯。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -135,7 +159,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;学车第二天开始留下的笔记。&lt;br&gt;
+      &lt;p&gt;学车第二天开始留下的笔记。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -157,7 +181,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;简单的说一下PC下使用chrome浏览器抓取页面元素的方法。&lt;br&gt;
+      &lt;p&gt;简单的说一下PC下使用chrome浏览器抓取页面元素的方法。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -179,7 +203,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近鼓捣FusionApp，帮别人鼓捣网页js，把常用的js在这里做一下记录。想起来什么写什么，可能不准确。&lt;br&gt;
+      &lt;p&gt;最近鼓捣FusionApp，帮别人鼓捣网页js，把常用的js在这里做一下记录。想起来什么写什么，可能不准确。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -259,7 +283,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;要考试了，复习了一天数学，大脑爆炸。赶紧敲几行代码换换脑子。&lt;br&gt;
+      &lt;p&gt;要考试了，复习了一天数学，大脑爆炸。赶紧敲几行代码换换脑子。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -283,7 +307,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;2017年11月9日 ViaIndex周更新记录&lt;br&gt;
+      &lt;p&gt;2017年11月9日 ViaIndex周更新记录&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -307,7 +331,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;根据同学实际使用时的需求，进一步改进程序。&lt;br&gt;
+      &lt;p&gt;根据同学实际使用时的需求，进一步改进程序。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -329,7 +353,7 @@
     <published>2017-09-18T11:04:00.000Z</published>
     <updated>2019-08-21T09:16:26.162Z</updated>
     
-    <content type="html"><![CDATA[<p>可能用得到的一些书签，需要的时候拖动到书签栏就好了</p><a id="more"></a><h3 id="一键复制网页信息"><a href="#一键复制网页信息" class="headerlink" title="一键复制网页信息"></a>一键复制网页信息</h3><p><a href="javascript:prompt('手动复制：',document.title+'_链接：'+location.href)" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">一键复制网页信息</a>（拖动到书签栏，在需要分享页面点击即可复制内容）</p><h3 id="蓝墨云班课-PDF-下载"><a href="#蓝墨云班课-PDF-下载" class="headerlink" title="蓝墨云班课 - PDF 下载"></a>蓝墨云班课 - PDF 下载</h3><p><a href="javascript:PDFViewerApplication.download()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">蓝墨云班课 PDF 下载</a>（拖动到书签栏，打开资源中的PDF，然后点击书签栏中的此链接）</p><h3 id="B站快速访问"><a href="#B站快速访问" class="headerlink" title="B站快速访问"></a>B站快速访问</h3><p><a href="javascript:open('https://www.bilibili.com/av'+prompt('输入av号','','avxxxxxx').replace('av',''))" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">B站快速访问</a>（拖动到书签栏，点击书签栏中的此链接，输入av号跳转）</p><h3 id="B站智能搜索"><a href="#B站智能搜索" class="headerlink" title="B站智能搜索"></a>B站智能搜索</h3><p><a href="javascript:value=prompt('哔哩哔哩智能搜索 - CKylinMyBLOG\n\n支持的内容：\nAV号/ANIME号/EP号/UID号/LIVE号/视频关键词\n\n输入你想搜索或跳转的位置：','','AV号/ANIME号/EP号/UID号/视频关键词');key=value.toLowerCase();baselink='https://www.bilibili.com/';baselive='https://live.bilibili.com/';basesearch='https://search.bilibili.com/';basespace='https://space.bilibili.com/';basebangumi='https://bangumi.bilibili.com/';url=&quot;javascript:alert('关键词为空或出现错误！');close()&quot;;cated=false;if(value.length===0||value==&quot; &quot;){cated=true}if(key.indexOf(&quot;av&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;av&quot;+value.replace(&quot;av&quot;,&quot;&quot;).replace(&quot;AV&quot;,&quot;&quot;)}if(key.indexOf(&quot;anime&quot;)===0&amp;&amp;key.length>5){cated=true;url=basebangumi+&quot;anime/&quot;+value.replace(&quot;anime&quot;,&quot;&quot;).replace(&quot;ANIME&quot;,&quot;&quot;)}if(key.indexOf(&quot;ep&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;bangumi/play/ep&quot;+value.replace(&quot;ep&quot;,&quot;&quot;).replace(&quot;EP&quot;,&quot;&quot;)}if(key.indexOf(&quot;uid&quot;)===0&amp;&amp;key.length>4){cated=true;url=basespace+value.replace(&quot;uid:&quot;,&quot;&quot;).replace(&quot;uid&quot;,&quot;&quot;).replace(&quot;UID:&quot;,&quot;&quot;).replace(&quot;UID&quot;,&quot;&quot;)}if(key.indexOf(&quot;live&quot;)===0&amp;&amp;key.length>4){cated=true;url=baselive+value.replace(&quot;live&quot;,&quot;&quot;).replace(&quot;LIVE&quot;,&quot;&quot;)}if(!cated){url=basesearch+&quot;all?keyword=&quot;+value}open(url);" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">哔哩哔哩智能搜索</a>（拖动到书签栏，点击书签栏中的此链接，输入AV号/ANIME号/EP号/UID号/视频关键词直达）</p><p><strong>哔哩哔哩智能搜索已经升级为Chrome扩展，书签版本不再维护更新！</strong></p><p><a href="/tags/哔哩哔哩智能搜索/">传送门&gt;&gt;&gt;</a></p><h3 id="特殊跳转链接"><a href="#特殊跳转链接" class="headerlink" title="特殊跳转链接"></a>特殊跳转链接</h3><p><a href="javascript:(function(){let a=prompt('输入特殊协议链接：','','');if(a) open(a);else console.error('空链接 '+a)})()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">特殊跳转链接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）</p><blockquote><p>此书签用于测试。比如一些特殊协议的app链接”ms-settings”之类的。</p></blockquote><h3 id="获取B站视频AV号"><a href="#获取B站视频AV号" class="headerlink" title="获取B站视频AV号"></a>获取B站视频AV号</h3><p><a href="javascript:var aid;if(aid)prompt('AID:','av'+aid);else alert('NO AID');" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取AV号</a>（拖动到书签栏，点击书签栏中的此链接，即可获取av号）</p><p><a href="javascript:var aid;if(aid)prompt('AID:','https://www.bilibili.com/video/av'+aid);else alert('NO AID');" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取AV号格式链接</a>（拖动到书签栏，点击书签栏中的此链接，即可获取av号格式链接）</p><blockquote><p>链接甚至可以获取番剧的视频AV号！</p></blockquote><h3 id="获取B站带时间视频连接"><a href="#获取B站带时间视频连接" class="headerlink" title="获取B站带时间视频连接"></a>获取B站带时间视频连接</h3><p><a href="javascript:if(location.href.indexOf("https://www.bilibili.com/video/av")===0){var a=document.querySelector(".bilibili-player-video-time-now").innerText.split(":");prompt("URL:",location.origin+location.pathname+"?t="+(a[0]*60+parseInt(a[1])));}else alert("只支持Bilibili视频");" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取B站带时间视频连接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）<br>(或复制：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javascript:if(location.href.indexOf(&quot;https://www.bilibili.com/video/av&quot;)===0)&#123;var a=document.querySelector(&quot;.bilibili-player-video-time-now&quot;).innerText.split(&quot;:&quot;);prompt(&quot;URL:&quot;,location.origin+location.pathname+&quot;?t=&quot;+(a[0]*60+parseInt(a[1])));&#125;else alert(&quot;只支持Bilibili视频&quot;);</span><br></pre></td></tr></table></figure></p><p>到一个新的书签的网址栏即可。)</p><blockquote><p>获得打开链接自动跳转到对应时间并开始播放的分享地址</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>可能用得到的一些书签，需要的时候拖动到书签栏就好了</p><a id="more"></a><h3 id="一键复制网页信息"><a href="#一键复制网页信息" class="headerlink" title="一键复制网页信息"></a>一键复制网页信息</h3><p><a href="javascript:prompt('手动复制：',document.title+'_链接：'+location.href)" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">一键复制网页信息</a>（拖动到书签栏，在需要分享页面点击即可复制内容）</p><h3 id="蓝墨云班课-PDF-下载"><a href="#蓝墨云班课-PDF-下载" class="headerlink" title="蓝墨云班课 - PDF 下载"></a>蓝墨云班课 - PDF 下载</h3><p><a href="javascript:PDFViewerApplication.download()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">蓝墨云班课 PDF 下载</a>（拖动到书签栏，打开资源中的PDF，然后点击书签栏中的此链接）</p><h3 id="B站快速访问"><a href="#B站快速访问" class="headerlink" title="B站快速访问"></a>B站快速访问</h3><p><a href="javascript:open('https://www.bilibili.com/av'+prompt('输入av号','','avxxxxxx').replace('av',''))" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">B站快速访问</a>（拖动到书签栏，点击书签栏中的此链接，输入av号跳转）</p><h3 id="B站智能搜索"><a href="#B站智能搜索" class="headerlink" title="B站智能搜索"></a>B站智能搜索</h3><p><a href="javascript:value=prompt('哔哩哔哩智能搜索 - CKylinMyBLOG\n\n支持的内容：\nAV号/ANIME号/EP号/UID号/LIVE号/视频关键词\n\n输入你想搜索或跳转的位置：','','AV号/ANIME号/EP号/UID号/视频关键词');key=value.toLowerCase();baselink='https://www.bilibili.com/';baselive='https://live.bilibili.com/';basesearch='https://search.bilibili.com/';basespace='https://space.bilibili.com/';basebangumi='https://bangumi.bilibili.com/';url=&quot;javascript:alert('关键词为空或出现错误！');close()&quot;;cated=false;if(value.length===0||value==&quot; &quot;){cated=true}if(key.indexOf(&quot;av&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;av&quot;+value.replace(&quot;av&quot;,&quot;&quot;).replace(&quot;AV&quot;,&quot;&quot;)}if(key.indexOf(&quot;anime&quot;)===0&amp;&amp;key.length>5){cated=true;url=basebangumi+&quot;anime/&quot;+value.replace(&quot;anime&quot;,&quot;&quot;).replace(&quot;ANIME&quot;,&quot;&quot;)}if(key.indexOf(&quot;ep&quot;)===0&amp;&amp;key.length>2){cated=true;url=baselink+&quot;bangumi/play/ep&quot;+value.replace(&quot;ep&quot;,&quot;&quot;).replace(&quot;EP&quot;,&quot;&quot;)}if(key.indexOf(&quot;uid&quot;)===0&amp;&amp;key.length>4){cated=true;url=basespace+value.replace(&quot;uid:&quot;,&quot;&quot;).replace(&quot;uid&quot;,&quot;&quot;).replace(&quot;UID:&quot;,&quot;&quot;).replace(&quot;UID&quot;,&quot;&quot;)}if(key.indexOf(&quot;live&quot;)===0&amp;&amp;key.length>4){cated=true;url=baselive+value.replace(&quot;live&quot;,&quot;&quot;).replace(&quot;LIVE&quot;,&quot;&quot;)}if(!cated){url=basesearch+&quot;all?keyword=&quot;+value}open(url);" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">哔哩哔哩智能搜索</a>（拖动到书签栏，点击书签栏中的此链接，输入AV号/ANIME号/EP号/UID号/视频关键词直达）</p><p><strong>哔哩哔哩智能搜索已经升级为Chrome扩展，书签版本不再维护更新！</strong></p><p><a href="/tags/哔哩哔哩智能搜索/">传送门&gt;&gt;&gt;</a></p><h3 id="特殊跳转链接"><a href="#特殊跳转链接" class="headerlink" title="特殊跳转链接"></a>特殊跳转链接</h3><p><a href="javascript:(function(){let a=prompt('输入特殊协议链接：','','');if(a) open(a);else console.error('空链接 '+a)})()" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">特殊跳转链接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）</p><blockquote><p>此书签用于测试。比如一些特殊协议的app链接”ms-settings”之类的。</p></blockquote><h3 id="获取B站视频AV号"><a href="#获取B站视频AV号" class="headerlink" title="获取B站视频AV号"></a>获取B站视频AV号</h3><p><a href="javascript:var aid;if(aid)prompt('AID:','av'+aid);else alert('NO AID');" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取AV号</a>（拖动到书签栏，点击书签栏中的此链接，即可获取av号）</p><p><a href="javascript:var aid;if(aid)prompt('AID:','https://www.bilibili.com/video/av'+aid);else alert('NO AID');" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取AV号格式链接</a>（拖动到书签栏，点击书签栏中的此链接，即可获取av号格式链接）</p><blockquote><p>链接甚至可以获取番剧的视频AV号！</p></blockquote><h3 id="获取B站带时间视频连接"><a href="#获取B站带时间视频连接" class="headerlink" title="获取B站带时间视频连接"></a>获取B站带时间视频连接</h3><p><a href="javascript:if(location.href.indexOf(" https: www.bilibili.com video av")="==0){var" a="document.querySelector(".bilibili-player-video-time-now").innerText.split(":");prompt("URL:",location.origin+location.pathname+"?t="+(a[0]*60+parseInt(a[1])));}else" alert("只支持bilibili视频");" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取B站带时间视频连接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）<br>(或复制：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javascript:if(location.href.indexOf(&quot;https://www.bilibili.com/video/av&quot;)===0)&#123;var a=document.querySelector(&quot;.bilibili-player-video-time-now&quot;).innerText.split(&quot;:&quot;);prompt(&quot;URL:&quot;,location.origin+location.pathname+&quot;?t=&quot;+(a[0]*60+parseInt(a[1])));&#125;else alert(&quot;只支持Bilibili视频&quot;);</span><br></pre></td></tr></table></figure></p><p>到一个新的书签的网址栏即可。)</p><blockquote><p>获得打开链接自动跳转到对应时间并开始播放的分享地址</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -355,7 +379,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小程序来做到直接下载。（音频ID同样出现在每个音频页面的URL中。）&lt;br&gt;
+      &lt;p&gt;学校新开了口语课，要求在家把课文什么的背诵时录音，上传到喜马拉雅平台，老师通过订阅学生，收听音频方式收作业。前两天老师说要收集班上所有人的音频文件，但是喜马拉雅音频手机中可以下载但是不能导出，电脑上web版本更是没有直接下载的链接，我在网上搜索时无意中搜到了通过喜马拉雅音频ID获取音频文件地址的官方API，而且API没有任何认证可以直接调用，于是我就想利用我会的这一点点编程语言尝试着写一个快速的小程序来做到直接下载。（音频ID同样出现在每个音频页面的URL中。）&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -385,7 +409,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;之前尝试过wordpress，typecho，hubpress等多个博客软件和静态博客软件，现在，终于选择在自己的电脑上搭建hexo并托管到gh pages了。&lt;br&gt;
+      &lt;p&gt;之前尝试过wordpress，typecho，hubpress等多个博客软件和静态博客软件，现在，终于选择在自己的电脑上搭建hexo并托管到gh pages了。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     

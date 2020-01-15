@@ -3,9 +3,105 @@
   
     
     <entry>
+      <title><![CDATA[Java架构师培训 - 预科 - 笔记 02]]></title>
+      <url>/2020/01/15/Java%E6%9E%B6%E6%9E%84%E5%B8%88%E5%9F%B9%E8%AE%AD%20-%20%E9%A2%84%E7%A7%91%20-%20%E7%AC%94%E8%AE%B0%2002/</url>
+      <content type="html"><![CDATA[<p>运算符、十进制与二进制转换<br><a id="more"></a></p>
+<h2 id="运算符-14"><a href="#运算符-14" class="headerlink" title="运算符 (14)"></a>运算符 (14)</h2><ul>
+<li>分割运算符<ul>
+<li><code>(  )</code></li>
+</ul>
+</li>
+<li>自增 / 自减<ul>
+<li><code>i++</code> /  <code>++a</code></li>
+<li><code>i--</code> / <code>--a</code></li>
+</ul>
+</li>
+<li>算术<ul>
+<li>乘、除、取余 <code>*</code> <code>/</code> <code>%</code><ul>
+<li><font color="blue"><strong>除法结果的数据类型由被除数决定(前数)</strong></font></li>
+</ul>
+</li>
+<li>加、减 <code>+</code> <code>-</code></li>
+</ul>
+</li>
+<li>移位<ul>
+<li><code>&gt;&gt;</code></li>
+<li><code>&lt;&lt;</code></li>
+<li><code>&gt;&gt;&gt;</code></li>
+</ul>
+</li>
+<li>关系<ul>
+<li>大小</li>
+<li>相等</li>
+</ul>
+</li>
+<li>按位<ul>
+<li>与 <code>&amp;</code><ul>
+<li>两项为1才为1</li>
+</ul>
+</li>
+<li>异或 <code>^</code><ul>
+<li>两项相同为0 不同为1</li>
+</ul>
+</li>
+<li>或 <code>|</code><ul>
+<li>有1为1，全0为0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>逻辑<ul>
+<li>与 <code>&amp;&amp;</code><ul>
+<li>两真为真，有假为假</li>
+</ul>
+</li>
+<li>或 <code>||</code><ul>
+<li>有真为真，全假则假</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>条件<ul>
+<li><code>xx ? xx : xx</code></li>
+</ul>
+</li>
+<li>赋值<ul>
+<li><code>=</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="其他笔记"><a href="#其他笔记" class="headerlink" title="其他笔记"></a>其他笔记</h2><h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><ul>
+<li>第一位为正负指示<ul>
+<li>负数是需要取反，并+1</li>
+</ul>
+</li>
+</ul>
+<h3 id="十进制转换二进制算法"><a href="#十进制转换二进制算法" class="headerlink" title="十进制转换二进制算法"></a>十进制转换二进制算法</h3><ul>
+<li>将十进制数字除以2，将余数依次从右到左排列，直到商为0。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 编程开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 培训笔记 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java架构师培训 - 预科 - 笔记 01]]></title>
       <url>/2020/01/14/Java%E6%9E%B6%E6%9E%84%E5%B8%88%E5%9F%B9%E8%AE%AD%20-%20%E9%A2%84%E7%A7%91%20-%20%E7%AC%94%E8%AE%B0%2001/</url>
-      <content type="html"><![CDATA[<p>Java架构师培训 - 预科 - 笔记 01<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<p>变量、数据类型、类型转换规则<br><a id="more"></a></p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
 <li>变量名只允许数字、字幕、 <code>_</code>、<code>$</code>。</li>
 <li>数字不可以作为变量名起始字符。</li>
@@ -746,7 +842,7 @@
 <blockquote>
 <p>链接甚至可以获取番剧的视频AV号！</p>
 </blockquote>
-<h3 id="获取B站带时间视频连接"><a href="#获取B站带时间视频连接" class="headerlink" title="获取B站带时间视频连接"></a>获取B站带时间视频连接</h3><p><a href="javascript:if(location.href.indexOf("https://www.bilibili.com/video/av")===0){var a=document.querySelector(".bilibili-player-video-time-now").innerText.split(":");prompt("URL:",location.origin+location.pathname+"?t="+(a[0]*60+parseInt(a[1])));}else alert("只支持Bilibili视频");" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取B站带时间视频连接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）<br>(或复制：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javascript:if(location.href.indexOf(&quot;https://www.bilibili.com/video/av&quot;)===0)&#123;var a=document.querySelector(&quot;.bilibili-player-video-time-now&quot;).innerText.split(&quot;:&quot;);prompt(&quot;URL:&quot;,location.origin+location.pathname+&quot;?t=&quot;+(a[0]*60+parseInt(a[1])));&#125;else alert(&quot;只支持Bilibili视频&quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="获取B站带时间视频连接"><a href="#获取B站带时间视频连接" class="headerlink" title="获取B站带时间视频连接"></a>获取B站带时间视频连接</h3><p><a href="javascript:if(location.href.indexOf(" https: www.bilibili.com video av")="==0){var" a="document.querySelector(".bilibili-player-video-time-now").innerText.split(":");prompt("URL:",location.origin+location.pathname+"?t="+(a[0]*60+parseInt(a[1])));}else" alert("只支持bilibili视频");" onclick="alert('拖动到书签栏哦')" target="_blank" rel="noopener">获取B站带时间视频连接</a>（拖动到书签栏，点击书签栏中的此链接，输入特殊协议链接跳转）<br>(或复制：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javascript:if(location.href.indexOf(&quot;https://www.bilibili.com/video/av&quot;)===0)&#123;var a=document.querySelector(&quot;.bilibili-player-video-time-now&quot;).innerText.split(&quot;:&quot;);prompt(&quot;URL:&quot;,location.origin+location.pathname+&quot;?t=&quot;+(a[0]*60+parseInt(a[1])));&#125;else alert(&quot;只支持Bilibili视频&quot;);</span><br></pre></td></tr></table></figure></p>
 <p>到一个新的书签的网址栏即可。)</p>
 <blockquote>
 <p>获得打开链接自动跳转到对应时间并开始播放的分享地址</p>
@@ -876,12 +972,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[友链]]></title>
       <url>/flinks/index.html</url>
       <content type="html"><![CDATA[<a id="more"></a>
@@ -894,6 +984,12 @@
 </li>
 </ul>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[分类]]></title>
+      <url>/categories/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
